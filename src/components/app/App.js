@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Auth from '../auth/Auth';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCheckedAuth } from '../auth/reducers';
 import { tryLoadUser } from '../auth/actions';
+import PrivateRoute from './PrivateRoute';
+import Home from './Home';
+import Auth from '../auth/Auth';
+import PetDashboard from '../pets/PetDashboard';
+import PostPet from '../forms/PostPet';
 
 class App extends PureComponent {
 
@@ -24,15 +28,25 @@ class App extends PureComponent {
       <Router>
 
         <div>
-          <h1>Hello Team Cookie!</h1>
+          <header>
+            <h1>Header Component Lives Here</h1>
+          </header>
+
           <main>
             { checkedAuth &&
               <Switch>
+                <Route exact path="/" component={Home}/>
                 <Route path="/auth" component={Auth}/>
+                <PrivateRoute exact path="/pets" component={PetDashboard}/>
+                <PrivateRoute exact path="/post" component={PostPet}/>
                 <Redirect to="/"/>
               </Switch>
             }
           </main>
+
+          <footer>
+            <h5>Footer lives here</h5>
+          </footer>
         </div>
       </Router>
     );
