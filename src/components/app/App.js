@@ -4,11 +4,13 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCheckedAuth } from '../auth/reducers';
 import { tryLoadUser } from '../auth/actions';
+import Header from './Header';
 import PrivateRoute from './PrivateRoute';
 import Home from './Home';
 import Auth from '../auth/Auth';
 import PetDashboard from '../pets/PetDashboard';
 import PostPet from '../forms/PostPet';
+
 
 class App extends PureComponent {
 
@@ -28,10 +30,7 @@ class App extends PureComponent {
       <Router>
 
         <div>
-          <header>
-            <h1>Header Component Lives Here</h1>
-          </header>
-
+          <Header/>
           <main>
             { checkedAuth &&
               <Switch>
