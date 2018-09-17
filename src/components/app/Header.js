@@ -30,6 +30,7 @@ class Header extends Component {
           { user
             ? <div>
               <Link to="/dashboard">Dashboard</Link>
+              <Link to="/post">Post Pet</Link>
               <Link to="/" onClick={this.handleLogout}>Logout</Link>
 
             </div>
