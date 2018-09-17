@@ -5,6 +5,7 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { getCheckedAuth } from '../auth/reducers';
 import { tryLoadUser } from '../auth/actions';
+import Header from './Header';
 
 class App extends PureComponent {
 
@@ -24,7 +25,7 @@ class App extends PureComponent {
       <Router>
 
         <div>
-          <h1>Hello Team Cookie!</h1>
+          <Header/>
           <main>
             { checkedAuth &&
               <Switch>
