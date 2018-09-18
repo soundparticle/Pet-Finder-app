@@ -33,7 +33,7 @@ class PetDashboard extends Component {
             <h2>Pet Dashboard</h2>
             <h3>Interested in:</h3>
             <ul>
-          Pet list here
+              Pet list here
             </ul>
           </section>
           :
