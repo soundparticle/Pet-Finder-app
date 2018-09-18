@@ -10,6 +10,7 @@ class PostPet extends Component {
         <form>
           <label>
             <h3>Reason for rehoming:</h3>
+            <p>In order to find the perfect home for your pet, please fill out all fields.</p>
             <select>
               <option value="None">None</option>
               <option value="Allergy">Allergy</option>
@@ -24,7 +25,7 @@ class PostPet extends Component {
             <input type="text" name="name"/>
           </label>
           <label>
-            <h3>Animal</h3>
+            <h3>Animal:</h3>
             <select>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -60,7 +61,7 @@ class PostPet extends Component {
               <option value="Young">Young</option>
               <option value="Adult">Adult</option>
               <option value="Senior">Senior</option>
-              <option value="Unknown">Unknown</option>
+              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
           <label>
@@ -68,23 +69,23 @@ class PostPet extends Component {
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Unknown</option>
+              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
           <label>
-            <h3>Kid friendly?:</h3>
+            <h3>Plays well with children:</h3>
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Unknown</option>
+              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
           <label>
-            <h3>Plays well with other pets?:</h3>
+            <h3>Plays well with other pets:</h3>
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Unknown</option>
+              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
           <label>
@@ -107,6 +108,7 @@ class PostPet extends Component {
             <h3>Upload Photo:</h3>
             <input/>
           </label>
+          <button>rehome</button>
         </form>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
+import styles from './Home.css';
 // import Slider from '../imageSlider/Slider';
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
@@ -52,7 +53,7 @@ class Home extends Component {
   render() { 
     const { image } = this.state;
     return (
-      <div>
+      <div className={styles.home}>
         <h1>Home/About Page</h1>
         <Dropzone 
           onDrop={this.handleDrop} 
