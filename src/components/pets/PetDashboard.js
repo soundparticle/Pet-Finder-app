@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { signupSeeker } from './actions';
+import { seekerDetails } from './actions';
 import { getSeeker } from './reducers';
+import PetSeeker from '../forms/PetSeeker';
 
 class PetDashboard extends Component {
 
@@ -15,6 +16,9 @@ class PetDashboard extends Component {
 
     return ( 
       <div>
+        {!seeker && 
+          <PetSeeker/>
+        }
         <h2>Pet Dashboard</h2>
       </div>
     );
@@ -25,5 +29,5 @@ export default connect(
   state => ({
     seeker: getSeeker(state)
   }),
-  { signupSeeker } 
+  { seekerDetails } 
 )(PetDashboard);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Slider from '../imageSlider/Slider';
 
 class Home extends Component {
 
@@ -6,6 +7,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Home/About Page</h1>
+        <Slider />
       </div>
     );
   }
