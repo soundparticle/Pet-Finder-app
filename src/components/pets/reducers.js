@@ -2,8 +2,8 @@ export const SEEKER_AUTH = 'SEEKER_AUTH';
 export const INTERESTED_LOAD = 'INTERESTED_LOAD';
 export const FAVORITES_LOAD = 'FAVORITES_LOAD';
 
-export const getSeeker = state => state.seeker;
 
+export const getSeeker = state => state.seeker;
 export const getInterested = state => state.interested;
 export const getFavorites = state => state.favorites;
 
@@ -23,6 +23,8 @@ export function seeker(state = null, { type, payload }) {
       return payload;
     default: 
       return state;
+  }
+}
 
 // check and see if user is also a seeker
 
