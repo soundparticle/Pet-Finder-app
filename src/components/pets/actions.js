@@ -5,6 +5,7 @@ import { getPetsInterested } from '../../services/api';
 export const seekerDetails = () => ({
   type: SEEKER_AUTH,
   payload: null
+});
 
 export const loadInterested = () => ({
   type: INTERESTED_LOAD,
