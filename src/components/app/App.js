@@ -31,7 +31,7 @@ class App extends PureComponent {
     return (
       <Router>
 
-        <div>
+        <div className="app-container">
           <Header/>
           <main>
             { checkedAuth &&
