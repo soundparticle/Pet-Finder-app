@@ -107,6 +107,7 @@ class PostPet extends Component {
             <h3>Upload Photo:</h3>
             <input/>
           </label>
+          <button>rehome</button>
         </form>
       </div>
     );
