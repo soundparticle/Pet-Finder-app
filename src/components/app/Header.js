@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
 import { Route, Link } from 'react-router-dom';
 import Error from './Error';
+import styles from './Header.css';
 
 class Header extends Component {
 
@@ -21,21 +22,23 @@ class Header extends Component {
     const { user } = this.props;
 
     return (
-      <header>
+      <header className={styles.header}>
         <nav>
           {/* TODO: add logo as home */}
           <Link to="/">Home</Link>
-          <Link to="/get-started">Get Started</Link>
-          <Link to="/find">Find a Pet</Link>
           { user
-            ? <div>
-              <Link to="/dashboard">Dashboard</Link>
+            ? <Fragment>
+              <Link to="/find">Find a Pet</Link>
               <Link to="/post">Post Pet</Link>
+              <Link to="/dashboard">Dashboard</Link>
               <Link to="/" onClick={this.handleLogout}>Logout</Link>
 
-            </div>
-            : 
-            <Link to="/auth">Signin</Link>
+            </Fragment>
+            :
+            <Fragment>
+              <Link to="/get-started">Get Started</Link>
+              <Link to="/auth">Signin</Link>
+            </Fragment> 
           }
         </nav>
         { user && <span>Welcome, {user.name}</span> }

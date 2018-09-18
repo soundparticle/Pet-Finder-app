@@ -1,0 +1,4 @@
+:local(.PostPet) {
+  display: flex;
+  flex-direction: column;
+}

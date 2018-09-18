@@ -1,0 +1,6 @@
+:local(.petSeeker) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
