@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import styles from './PostPet.css';
 
 class PostPet extends Component {
 
   render() { 
     return (
-      <div>
+      <div className={styles.PostPet}>
         <h2>Form to post a pet</h2>
         <form>
           <label>
-            Reason for rehoming: 
+            <h3>Reason for rehoming:</h3>
             <select>
               <option value="None">None</option>
               <option value="Allergy">Allergy</option>
@@ -19,24 +20,24 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Name:
+            <h3>Name:</h3>
             <input type="text" name="name"/>
           </label>
           <label>
-            Animal:
+            <h3>Animal</h3>
             <select>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
           </label>
           <label>
-            Breed:
+            <h3>Breed:</h3>
             <select>
               <option value="Bulldog">Bull dog</option>
             </select>
           </label>
           <label>
-            Size:
+            <h3>Size:</h3>
             <select>
               <option value="Extra Small">X-Small</option>
               <option value="Small">Small</option>
@@ -46,14 +47,14 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Sex:
+            <h3>Sex:</h3>
             <select>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </label>
           <label>
-            Age: 
+            <h3>Age:</h3> 
             <select>
               <option value="Baby">Baby</option>
               <option value="Young">Young</option>
@@ -63,7 +64,7 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Sterilized: 
+            <h3>Sterilized: </h3>
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -71,7 +72,7 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Kid friendly?:
+            <h3>Kid friendly?:</h3>
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -79,7 +80,7 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Plays well with other pets?:
+            <h3>Plays well with other pets?:</h3>
             <select>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -87,7 +88,7 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Activity level required: 
+            <h3>Activity level required:</h3> 
             <select>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
@@ -95,15 +96,15 @@ class PostPet extends Component {
             </select>
           </label>
           <label>
-            Description: 
+            <h3>Description: </h3>
             <textarea name="description"></textarea>
           </label>
           <label>
-            Health/behavior: 
+            <h3>Health/behavior: </h3>
             <textarea name="health-behavior"></textarea>
           </label>
           <label>
-            Upload Photo:
+            <h3>Upload Photo:</h3>
             <input/>
           </label>
         </form>
