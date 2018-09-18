@@ -17,24 +17,28 @@ class PetDashboard extends Component {
     pets: PropTypes.array
   }
 
-componentDidMount() {
-    this.props.loadInterested();
-    this.props.loadFavorites();
-  }
+  // componentDidMount() {
+  //   this.props.loadInterested();
+  //   this.props.loadFavorites();
+  // }
 
   render() { 
     const { pets, seeker } = this.props;
     
     return ( 
       <div>
-        {!seeker && 
-          <PetSeeker/>
-        }
-        <h2>Pet Dashboard</h2>
-        <h3>Interested in:</h3>
-        <ul>
+        { seeker
+          ?
+          <section>
+            <h2>Pet Dashboard</h2>
+            <h3>Interested in:</h3>
+            <ul>
           Pet list here
-        </ul>
+            </ul>
+          </section>
+          :
+          <PetSeeker/>//Form component
+        }
       </div>
     );
   }
