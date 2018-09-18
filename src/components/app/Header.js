@@ -6,6 +6,7 @@ import { logout } from '../auth/actions';
 import { Route, Link } from 'react-router-dom';
 import Error from './Error';
 import styles from './Header.css';
+import logo from '../../assets/images/logo-2.svg';
 
 class Header extends Component {
 
@@ -25,7 +26,7 @@ class Header extends Component {
       <header className={styles.header}>
         <nav>
           {/* TODO: add logo as home */}
-          <Link to="/">Home</Link>
+          <Link to="/"><img className="logo" src={logo}/></Link>
           { user
             ? <Fragment>
               <Link to="/find">Find a Pet</Link>
