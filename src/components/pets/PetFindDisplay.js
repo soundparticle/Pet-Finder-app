@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import Modal from 'react-responsive-modal';
 import PetFilter from '../forms/PetFilter';
+import styles from './PetFindDisplay.css';
 
 
 class PetFindDisplay extends Component {
@@ -23,7 +24,7 @@ class PetFindDisplay extends Component {
       <div>
         <h2>Find a pet</h2>
         <button onClick={this.onOpenModal}>Filter</button>
-        <Modal open={open} onClose={this.onCloseModal} center>
+        <Modal classNames={styles} open={open} onClose={this.onCloseModal} center={false} animationDuration={100} showCloseIcon={false}>
           <PetFilter/>
         </Modal>
       </div>
