@@ -1,18 +1,47 @@
 import React, { Component } from 'react';
 import styles from './PetSeeker.css';
+import PropTypes from 'prop-types';
 
 class PetSeeker extends Component {
+
+  state = {
+    kids: '',
+    activity: '',
+    otherPets: ''
+  }
+
+  static propTypes = {
+    onComplete: PropTypes.func.isRequired
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onComplete({
+      kids: this.state.kids,
+      activity: this.state.activity,
+      otherPets: this.state.otherPets,
+      interested: [],
+      favorites: []
+    });
+  }
   
-  render() { 
+  render() {
+
+    const { kids, activity, otherPets } = this.state;
 
     return (
       <div className={styles.petSeeker}>
         <h2>Form for pet seekers</h2>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>
             Do you have children?:
           </label>
-          <select>
+          <select name="kids" value={kids} onChange={this.handleChange}>
+            <option value="" disabled>Select an option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
@@ -20,7 +49,8 @@ class PetSeeker extends Component {
           <label>
             Activity level:
           </label>
-          <select>
+          <select name="activity" value={activity} onChange={this.handleChange}>
+            <option value="" disabled>Select an option</option>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
@@ -29,7 +59,8 @@ class PetSeeker extends Component {
           <label>
            Do you own other pets?:
           </label>
-          <select>
+          <select name="otherPets" value={otherPets} onChange={this.handleChange}>
+            <option value="" disabled>Select an option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
