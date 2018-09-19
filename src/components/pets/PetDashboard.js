@@ -3,30 +3,39 @@ import PetSeeker from '../forms/PetSeeker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSeeker } from './reducers';
-import { addSeeker } from './actions';
+import { addSeeker, load } from './actions';
 
 class PetDashboard extends Component {
 
+
   static propTypes = {
+    seeker: PropTypes.array,
+    load: PropTypes.func.isRequired,
     addSeeker: PropTypes.func.isRequired
   }
 
+  componentDidMount() {
+    this.props.load();
+  }
+
   render() { 
-    const { addSeeker } = this.props;
+    const { addSeeker, seeker } = this.props;
     
     return ( 
       <div>
-      
+        {seeker.length < 1 &&
+          <section>
+            <PetSeeker onComplete={addSeeker}/>
+          </section>
+        }
+        
         <section>
           <h2>Pet Dashboard</h2>
-          <h3>Interested in:</h3>
           <ul>
             Pet list here
           </ul>
         </section>
-        
-        <PetSeeker onComplete={addSeeker}/>
-  
+
       </div>
     );
   }
@@ -34,7 +43,7 @@ class PetDashboard extends Component {
  
 export default connect(
   state => ({
-    categories: getSeeker(state)
+    seeker: getSeeker(state)
   }),
-  { addSeeker }
+  { load, addSeeker }
 )(PetDashboard);

@@ -1,5 +1,5 @@
-import {  SEEKER_ADD } from './reducers';
-import { postSeeker } from '../../services/api';
+import {  SEEKER_ADD, SEEKER_LOAD } from './reducers';
+import { postSeeker, loadSeeker } from '../../services/api';
 
 // export const loadInterested = () => ({
 //   type: INTERESTED_LOAD,
@@ -11,7 +11,13 @@ import { postSeeker } from '../../services/api';
 //   payload: getPetsInterested()
 // });
 
+
 export const addSeeker = data => ({
   type: SEEKER_ADD,
   payload: postSeeker(data)
+});
+
+export const load = () => ({
+  type: SEEKER_LOAD,
+  payload: loadSeeker()
 });

@@ -19,3 +19,4 @@ export const verifyUser = token => get(`${AUTH_URL}/verify`, {
 });
 
 export const postSeeker = details => post(SEEKER_URL, details);
+export const loadSeeker = () => get(SEEKER_URL);
