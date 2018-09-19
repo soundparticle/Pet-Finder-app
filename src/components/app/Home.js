@@ -35,7 +35,7 @@ class Home extends Component {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
       }).then(({ data }) => {
         const fileURL = data.secure_url; // You should store this URL for future references in your app
-        console.log(fileURL);
+        //console.log(fileURL);
         this.setState({ upload: fileURL });
       });
     });
