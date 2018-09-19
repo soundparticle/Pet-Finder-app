@@ -1,7 +1,7 @@
 import {
   pets,
-  //PETS_LOAD, SR: do we even need this? if so, need that test.
-  PET_LOAD,
+  PETS_LOAD, 
+  //PET_LOAD,
   PET_ADD,
   PET_UPDATE,
   PET_REMOVE,
@@ -18,7 +18,7 @@ describe('pets reducers', () => {
     const payload = [{}, {}, {}];
 
     const state = pets([], {
-      type:PET_LOAD,
+      type:PETS_LOAD,
       payload
     });
 
@@ -67,7 +67,7 @@ describe('pets reducers', () => {
       payload: '2'
     });
 
-    console.log('state', state);
+    //console.log('state', state);
     expect(state).toEqual([
       pet1, 
       pet3,
