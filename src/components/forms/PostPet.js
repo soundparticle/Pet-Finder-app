@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class PostPet extends Component {
 
   state = {
+    zip: '',
     reason: '',
     name: '',
     species: '',
@@ -74,6 +75,7 @@ class PostPet extends Component {
 
   render() { 
     const { 
+      zip,
       reason,
       name, 
       species, 
@@ -110,7 +112,11 @@ class PostPet extends Component {
           </label>
           <label>
             <h3>Name:</h3>
-            <input type="text" name="name" value={name} onChange={this.handleChange} />
+            <input type="text" name="name" placeholder="Name of pet" size="12" value={name} onChange={this.handleChange} />
+          </label>
+          <label>
+            <h3>Location (zip code):</h3>
+            <input type="text" name="zip" placeholder="zip code" pattern="^\d{5}(?:[-\s]\d{4})?$" value={zip} size="7" minLength="5" maxLength="5" onChange={this.handleChange} />
           </label>
           <label>
             <h3>Animal:</h3>
