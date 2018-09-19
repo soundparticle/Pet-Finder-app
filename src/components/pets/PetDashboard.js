@@ -4,8 +4,6 @@ import { getSeeker } from './reducers';
 import PetSeeker from '../forms/PetSeeker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getInterested, getFavorites } from './reducers';
-import { loadInterested, loadFavorites } from './actions';
 // import { data } from '../../mock-data/mock-data';
 
 class PetDashboard extends Component {
@@ -23,7 +21,7 @@ class PetDashboard extends Component {
   // }
 
   render() { 
-    const { pets, seeker } = this.props;
+    const { seeker } = this.props;
     
     return ( 
       <div>
@@ -46,8 +44,7 @@ class PetDashboard extends Component {
  
 export default connect(
   state => ({ 
-    pets: getInterested(state), 
-    favPets: getFavorites(state)
+    seeker: getSeeker(state)
   }),
-  { loadInterested }
+  { seekerDetails }
 )(PetDashboard);

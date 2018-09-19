@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class PetFilter extends Component {
 
-  static propTypes = {
-    onFilter: PropTypes.func.isRequired
-  }
+  // static propTypes = {
+  //   onFilter: PropTypes.func.isRequired
+  // }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onFilter(this.state);
+    //this.props.onFilter(this.state);
   };
 
   state = { 
