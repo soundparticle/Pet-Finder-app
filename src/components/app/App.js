@@ -12,6 +12,7 @@ import PetDashboard from '../pets/PetDashboard';
 import ListAPet from '../pets/ListAPet';
 import PetSeeker from '../forms/PetSeeker';
 import GetStarted from './GetStarted';
+import Dashboard from '../dashboard/Dashboard';
 // import PetFindDisplay from '../pets/PetFindDisplay';
 
 class App extends PureComponent {
@@ -38,7 +39,7 @@ class App extends PureComponent {
               <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/auth" component={Auth}/>
-                <PrivateRoute exact path="/dashboard" component={PetDashboard}/>
+                <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                 <PrivateRoute exact path="/find" component={PetDashboard}/>
                 <PrivateRoute exact path="/post" component={ListAPet}/>
                 <PrivateRoute exact path="/seek" component={PetSeeker}/>
