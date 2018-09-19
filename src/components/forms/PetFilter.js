@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class PetFilter extends Component {
 
@@ -14,7 +14,7 @@ class PetFilter extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onFilter(this.state);
+    //this.props.onFilter(this.state);
   };
 
   state = { 

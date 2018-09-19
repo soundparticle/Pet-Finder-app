@@ -5,12 +5,14 @@ import { error, loading } from '../components/app/reducers';
 import { favorites, interested } from '../components/pets/reducers';
 import { user, checkedAuth } from '../components/auth/reducers';
 import { seeker } from '../components/pets/reducers';
+import { pets } from '../components/pets/reducersPets';
 
 const rootReducer = combineReducers({
   error,
   loading,
   user,
   seeker,
+  pets,
   checkedAuth,
   favorites,
   interested

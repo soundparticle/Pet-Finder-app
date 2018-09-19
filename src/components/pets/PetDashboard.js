@@ -20,6 +20,7 @@ class PetDashboard extends Component {
   }
 
   render() { 
+
     const { addSeeker, seeker } = this.props;
     
     return ( 
@@ -48,4 +49,5 @@ export default connect(
     seeker: getSeeker(state)
   }),
   { load, addSeeker }
+
 )(PetDashboard);
