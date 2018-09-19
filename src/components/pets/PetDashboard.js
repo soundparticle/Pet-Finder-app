@@ -8,6 +8,7 @@ import PetSeeker from '../forms/PetSeeker';
 import PetFilter from '../forms/PetFilter';
 import ImageSlider from '../imageSlider/Slider';
 import { getPets } from './reducersPets';
+import FavoriteButton from '../controls/FavoriteButton';
 
 class PetDashboard extends Component {
 
@@ -36,7 +37,7 @@ class PetDashboard extends Component {
             <PetSeeker onComplete={addSeeker}/>
           </section>
         }
-
+        <FavoriteButton />
         <h3>{pets.name}</h3>
         <section>
           <ImageSlider pets={pets}/>
