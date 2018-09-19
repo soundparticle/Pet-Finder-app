@@ -34,6 +34,10 @@ class PetFilter extends Component {
             </select>
           </label>
           <label>
+            <h3>Location (zip code):</h3>
+            <input type="text" name="zip" placeholder="zip code" pattern="^\d{5}(?:[-\s]\d{4})?$" size="7" minLength="5" maxLength="5"/>
+          </label>
+          <label>
             <h3>Breed:</h3>
             <select>
               <option value="Bulldog">Bull dog</option>
