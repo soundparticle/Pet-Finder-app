@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 
 class PetFilter extends Component {
 
+  state = {
+    animal: '',
+
+  }
+
   static propTypes = {
     onFilter: PropTypes.func.isRequired
   }

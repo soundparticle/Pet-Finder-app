@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import PetSeeker from '../forms/PetSeeker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSeeker } from './reducers';
 import { addSeeker, load } from './actions';
+import PetSeeker from '../forms/PetSeeker';
+import PetFilter from '../forms/PetFilter';
 
 class PetDashboard extends Component {
 
@@ -31,9 +32,10 @@ class PetDashboard extends Component {
         
         <section>
           <h2>Pet Dashboard</h2>
-          <ul>
-            Pet list here
-          </ul>
+
+          <aside>
+            <PetFilter />
+          </aside>
         </section>
 
       </div>
