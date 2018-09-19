@@ -8,9 +8,9 @@ class PetFilter extends Component {
 
   }
 
-  static propTypes = {
-    onFilter: PropTypes.func.isRequired
-  }
+  // static propTypes = {
+  //   onFilter: PropTypes.func.isRequired
+  // }
 
   handleSubmit = event => {
     event.preventDefault();
