@@ -24,6 +24,10 @@ export const verifyUser = token => get(`${AUTH_URL}/verify`, {
 
 export const postSeeker = details => post(SEEKER_URL, details);
 export const loadSeeker = () => get(SEEKER_URL);
+
+export const addFavorite = (favorite, id) => get(`${SEEKER_URL}/${id}/favorites`, favorite); 
+//export const getFavorites = 
+
 export const getPets = () => get(PETS_URL);
 export const getPet = id => get(`${PETS_URL}/${id}`);
 export const postPet = data => post(PETS_URL, data);
