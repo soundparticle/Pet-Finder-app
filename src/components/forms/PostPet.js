@@ -8,14 +8,14 @@ class PostPet extends Component {
     reason: '',
     name: '',
     species: '',
-    breedCat: 'Tabby',
-    breedDog: 'Pug',
+    breedCat: 'Unknown',
+    breedDog: 'Unknown',
     size: '',
     sex: '',
     age: '',
-    sterilized: '',
+    sterilized: 'Unknown',
     children: '',
-    petFriendly: '',
+    petFriendly: 'Unknown',
     activityLevel: '',
     description: '',
     healthBehavior: '',
@@ -122,10 +122,10 @@ class PostPet extends Component {
           <label>
             <h3>Breed:</h3>
             <select name="breedCat" value={breedCat} onChange={this.handleChange}>
-              <option value="Tabby">Tabby</option>
+              <option value="Unknown">Unknown</option>
             </select>
             <select name="breedDog" value={breedDog} onChange={this.handleChange}>
-              <option value="Bulldog">Bull dog</option>
+              <option value="Unknown">Unknown</option>
             </select>
           </label>
           <label>
