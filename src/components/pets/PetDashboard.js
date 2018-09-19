@@ -1,50 +1,53 @@
 import React, { Component } from 'react';
-import { seekerDetails } from './actions';
-import { getSeeker } from './reducers';
-import PetSeeker from '../forms/PetSeeker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { data } from '../../mock-data/mock-data';
+import { getSeeker } from './reducers';
+import { addSeeker, load } from './actions';
+import PetSeeker from '../forms/PetSeeker';
+import PetFilter from '../forms/PetFilter';
 
 class PetDashboard extends Component {
 
+
   static propTypes = {
-    seeker: PropTypes.object,
-    loadInterested: PropTypes.func.isRequired,
-    loadFavorites: PropTypes.func.isRequired,
-    pets: PropTypes.array
+    seeker: PropTypes.array,
+    load: PropTypes.func.isRequired,
+    addSeeker: PropTypes.func.isRequired
   }
 
-  // componentDidMount() {
-  //   this.props.loadInterested();
-  //   this.props.loadFavorites();
-  // }
+  componentDidMount() {
+    this.props.load();
+  }
 
   render() { 
-    const { seeker } = this.props;
+
+    const { addSeeker, seeker } = this.props;
     
     return ( 
       <div>
-        { seeker
-          ?
+        {seeker.length < 1 &&
           <section>
-            <h2>Pet Dashboard</h2>
-            <h3>Interested in:</h3>
-            <ul>
-              Pet list here
-            </ul>
+            <PetSeeker onComplete={addSeeker}/>
           </section>
-          :
-          <PetSeeker/>//Form component
         }
+        
+        <section>
+          <h2>Pet Dashboard</h2>
+
+          <aside>
+            <PetFilter />
+          </aside>
+        </section>
+
       </div>
     );
   }
 }
  
 export default connect(
-  state => ({ 
+  state => ({
     seeker: getSeeker(state)
   }),
-  { seekerDetails }
+  { load, addSeeker }
+
 )(PetDashboard);

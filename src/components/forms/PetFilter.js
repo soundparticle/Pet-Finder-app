@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 
 class PetFilter extends Component {
 
-  // static propTypes = {
-  //   onFilter: PropTypes.func.isRequired
-  // }
+  state = {
+    animal: '',
+
+  }
+
+  static propTypes = {
+    onFilter: PropTypes.func.isRequired
+  }
 
   handleSubmit = event => {
     event.preventDefault();
