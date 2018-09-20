@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { signup, signin } from './actions';
 import { getUser } from './reducers';
 import Credentials from './Credentials';
+import styles from './Auth.css';
 
 class Auth extends PureComponent {
 
@@ -22,16 +23,16 @@ class Auth extends PureComponent {
     if(user) return <Redirect to={redirect}/>; 
 
     return ( 
-      <section>
+      <section className={styles.authForm}>
         <Switch>
           <Route path="/auth/signin" component={() => (
-            <div>
+            <div className="auth-container">
               <p>Not registered? <Link to="/auth/signup">Sign Up</Link></p>
               <Credentials action="Sign In" submit={signin}/>
             </div>
           )}/>
           <Route path="/auth/signup" render={() => (
-            <div>
+            <div className="auth-container">
               <p>Already have an account? <Link to="/auth/signin">Sign In</Link></p>
               <Credentials action="Sign up" submit={signup} allowName={true}/>
             </div>
