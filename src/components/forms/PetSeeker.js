@@ -42,8 +42,8 @@ class PetSeeker extends Component {
           </label>
           <select name="kids" value={kids} onChange={this.handleChange}>
             <option value="" disabled>Select an option</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
           </select>
        
           <label>
@@ -51,9 +51,9 @@ class PetSeeker extends Component {
           </label>
           <select name="activity" value={activity} onChange={this.handleChange}>
             <option value="" disabled>Select an option</option>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
           </select>
          
           <label>
@@ -61,8 +61,8 @@ class PetSeeker extends Component {
           </label>
           <select name="otherPets" value={otherPets} onChange={this.handleChange}>
             <option value="" disabled>Select an option</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
           </select>
           <button>Submit</button>
         </form>

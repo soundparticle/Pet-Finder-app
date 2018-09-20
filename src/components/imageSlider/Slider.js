@@ -8,7 +8,6 @@ import FavoriteButton from '../controls/FavoriteButton';
 
 class Slider extends Component {
 
-
   static propTypes = {
     seeker: PropTypes.object,
     pets: PropTypes.array,
