@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
-import { addFavorite } from '../pets/actionsFavorites';
-import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
-import { getSeeker } from '../pets/actions';
+
 
 class FavoriteButton extends Component {
-  
+
   static propTypes = {
-    addFavorite: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    pet: PropTypes.object,
   }
 
+  handleSubmit = () => {
+    const { pet } = this.props;
+    this.props.onComplete({ id: pet._id });
+  }
   render() { 
-    this.props.addFavorite();
-    
 
     return (
       <div>
-        <button onClick={addFavorite}>favorite</button>
+        <button onClick={this.handleSubmit}>Favorite</button>
       </div>
     );
   }
 }
  
-export default connect(
-  state => ({
-    seeker: getSeeker(state)
-  }), 
-  { addFavorite }
-)(FavoriteButton);
+export default FavoriteButton;
