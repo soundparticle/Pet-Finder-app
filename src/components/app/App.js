@@ -13,7 +13,6 @@ import ListAPet from '../pets/ListAPet';
 import PetSeeker from '../forms/PetSeeker';
 import GetStarted from './GetStarted';
 import Dashboard from '../dashboard/Dashboard';
-// import PetFindDisplay from '../pets/PetFindDisplay';
 
 class App extends PureComponent {
 

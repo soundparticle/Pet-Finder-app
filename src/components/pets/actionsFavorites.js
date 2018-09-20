@@ -1,12 +1,12 @@
 import { FAVORITE_ADD, FAVORITE_REMOVE } from './reducersFavorites';
-import { getFavorites } from '../../services/api';
+import { putFavorite } from '../../services/api';
 
-export const addFavorite = (favorite) => ({
+export const addFavorite = (pet) => ({
   type: FAVORITE_ADD,
-  payload: getFavorites(favorite)
+  payload: putFavorite(pet)
 });
 
-export const removeFavorite = (favorite) => ({
+export const removeFavorite = () => ({
   type: FAVORITE_REMOVE,
   payload: null
 });

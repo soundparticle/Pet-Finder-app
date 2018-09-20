@@ -4,8 +4,6 @@ import { get, post, put, del } from './request';
 const URL = '/api';
 const AUTH_URL = `${URL}/auth`;
 const SEEKER_URL = `${URL}/seekers`;
-// const INTERESTED_URL = `${URL}/interested`;
-// const FAVORITES_URL = `${URL}/favorites`;
 
 const PETS_URL = `${URL}/pets`;
 
@@ -25,7 +23,8 @@ export const verifyUser = token => get(`${AUTH_URL}/verify`, {
 export const postSeeker = details => post(SEEKER_URL, details);
 export const loadSeeker = () => get(SEEKER_URL);
 
-export const addFavorite = (favorite, id) => get(`${SEEKER_URL}/${id}/favorites`, favorite); 
+export const putFavorite = (favorite) => put(`${SEEKER_URL}/favorites`, favorite); 
+
 //export const getFavorites = 
 
 export const getPets = () => get(PETS_URL);

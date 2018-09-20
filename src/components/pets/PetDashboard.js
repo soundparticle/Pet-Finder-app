@@ -8,13 +8,12 @@ import PetSeeker from '../forms/PetSeeker';
 import PetFilter from '../forms/PetFilter';
 import ImageSlider from '../imageSlider/Slider';
 import { getPets } from './reducersPets';
-import FavoriteButton from '../controls/FavoriteButton';
 
 class PetDashboard extends Component {
 
 
   static propTypes = {
-    seeker: PropTypes.array,
+    seeker: PropTypes.object,
     pets: PropTypes.array,
     load: PropTypes.func.isRequired,
     addSeeker: PropTypes.func.isRequired,
@@ -32,12 +31,11 @@ class PetDashboard extends Component {
     
     return ( 
       <div>
-        {seeker.length < 1 &&
+        {!seeker &&
           <section>
             <PetSeeker onComplete={addSeeker}/>
           </section>
         }
-        <FavoriteButton />
         <h3>{pets.name}</h3>
         <section>
           <ImageSlider pets={pets}/>
