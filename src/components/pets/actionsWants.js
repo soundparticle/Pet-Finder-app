@@ -8,8 +8,6 @@ import {
   deleteWant 
 } from '../../services/api';
 
-
-  
 export const addWant = (want) => ({
   type: WANT_ADD,
   payload: putWant(want)
