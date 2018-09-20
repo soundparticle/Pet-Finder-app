@@ -8,8 +8,8 @@ class PetFilter extends Component {
   state = {
     zip: '',
     species: '',
-    breedCat: '',
-    breedDog: '',
+    catBreed: '',
+    dogBreed: '',
     size: '',
     sex: '',
     age: '',
@@ -84,7 +84,7 @@ class PetFilter extends Component {
               value={species} 
               onChange={this.handleChange}
             >
-              <option value="any">Any</option>
+              <option value="" disabled>Select an option</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
@@ -93,7 +93,12 @@ class PetFilter extends Component {
           <label>
             <h3>Breed:</h3>
 
-            <select name="catBreed" value={catBreed} onChange={this.handleChange}>
+            <select 
+              name="catBreed" 
+              value={catBreed} 
+              onChange={this.handleChange}
+            >
+              <option value="" disabled>Select an option</option>
               <option value="domestic-shorthair">Domestic Shorthair</option>
               <option value="domestic-longhair">Domestic Longhair</option>
               <option value="abyssinian">Abyssinian</option>
@@ -142,7 +147,12 @@ class PetFilter extends Component {
               <option value="turkish-van">Turkish Van</option>
             </select>
 
-            <select name="dogBreed" value={dogBreed} onChange={this.handleChange}>
+            <select 
+              name="dogBreed" 
+              value={dogBreed} 
+              onChange={this.handleChange}
+            >
+              <option value="" disabled>Select an option</option>
               <option value="mixed-breed">Mixed-Breed</option>
               <option value="beagle">Beagle</option> 
               <option value="bernese-mountain-dog">Bernese Mountain Dog</option>
@@ -182,7 +192,12 @@ class PetFilter extends Component {
 
           <label>
             <h3>Size:</h3>
-            <select name="size" value={size} onChange={this.handleChange}>
+            <select 
+              name="size" 
+              value={size} 
+              onChange={this.handleChange}
+            >
+              <option value="" disabled>Select an option</option>
               <option value="extra-small">X-Small</option>
               <option value="small">Small</option>
               <option value="medium">Medium</option>
@@ -198,11 +213,10 @@ class PetFilter extends Component {
               value={sex} 
               onChange={this.handleChange}
             >
-         
+              <option value="" disabled>Select an option</option>
               <option value="any">Female</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
-
             </select>
           </label>
 
@@ -212,7 +226,7 @@ class PetFilter extends Component {
               name="age" value={age} 
               onChange={this.handleChange}
             >
-       
+              <option value="" disabled>Select an option</option>
               <option value="baby">Baby</option>
               <option value="young">Young</option>
               <option value="adult">Adult</option>
@@ -227,8 +241,7 @@ class PetFilter extends Component {
               value={sterilized} 
               onChange={this.handleChange}
             >
-  
-              <option value="any">Any</option>
+              <option value="" disabled>Select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -242,7 +255,7 @@ class PetFilter extends Component {
               onChange={this.handleChange}
             >
 
-              <option value="any">Any</option>
+              <option value="" disabled>Select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -255,7 +268,7 @@ class PetFilter extends Component {
               value={petFriendly} 
               onChange={this.handleChange}
             >
-              <option value="any">Any</option>
+              <option value="" disabled>Select an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -268,8 +281,7 @@ class PetFilter extends Component {
               value={activityLevel} 
               onChange={this.handleChange}
             >
-         
-              <option value="any">Any</option>
+              <option value="" disabled>Select an option</option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>

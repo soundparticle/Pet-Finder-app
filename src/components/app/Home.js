@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import Dropzone from 'react-dropzone';
+import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import styles from './Home.css';
-// import Slider from '../imageSlider/Slider';
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
 const options = 'w_300';
@@ -68,7 +67,6 @@ class Home extends Component {
               // style={styles.dropzone}
             >
               <p>Drop your files or click here to upload</p>
-              <img src={image}/>
             </Dropzone>
           </div>
         </div>

@@ -6,7 +6,7 @@ class PetSeeker extends Component {
 
   state = {
     kids: '',
-    activity: '',
+    activityLevel: '',
     otherPets: ''
   }
 
@@ -22,7 +22,7 @@ class PetSeeker extends Component {
     event.preventDefault();
     this.props.onComplete({
       kids: this.state.kids,
-      activity: this.state.activity,
+      activityLevel: this.state.activityLevel,
       otherPets: this.state.otherPets,
       interested: [],
       favorites: []
@@ -31,7 +31,7 @@ class PetSeeker extends Component {
   
   render() {
 
-    const { kids, activity, otherPets } = this.state;
+    const { kids, activityLevel, otherPets } = this.state;
 
     return (
       <div className={styles.petSeeker}>
@@ -49,7 +49,7 @@ class PetSeeker extends Component {
           <label>
             Activity level:
           </label>
-          <select name="activity" value={activity} onChange={this.handleChange}>
+          <select name="activityLevel" value={activityLevel} onChange={this.handleChange}>
             <option value="" disabled>Select an option</option>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
