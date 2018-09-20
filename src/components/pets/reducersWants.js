@@ -6,8 +6,6 @@ export const getWants = state => state.wants;
 
 export function wants(state = [], { type, payload }) {
   switch(type) {
-    // case WANTS_LOAD:
-    //   return payload;
     case WANT_ADD:
       return [...state, payload];
     case WANT_REMOVE:
