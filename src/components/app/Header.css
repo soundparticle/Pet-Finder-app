@@ -26,4 +26,14 @@
   span {
     padding-left: 4vw;
   }
+
+}
+h2 {
+  padding-bottom: 0px;
+}
+hr {
+  background-color: #C2CAD0;
+  border: none;
+  // height: 5vh;
+  width: 100vw;
 }

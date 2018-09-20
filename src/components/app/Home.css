@@ -1,4 +1,33 @@
 :local(.home) {
   height: 75vh;
+  text-align: center;
+  width: 100vw;
+
   
+  .summary {
+    background-color: rgb(208, 248, 143);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13pt;
+    // padding: 0;
+    padding: 3vh 5vw;
+    text-align: left;
+    // width: 100vw;
+  }
+
+  p {
+    font-family: 'Rubik', sans-serif;
+  }
 } 
+    @media (min-width: 768px) {
+      :local(.home) {
+        .container {
+          .summary {
+            order: 2;
+          }    
+          display: inline-flex;
+          flex-direction: row;
+        
+        }
+      }
+    }
