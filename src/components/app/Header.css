@@ -45,7 +45,9 @@
     align-self: flex-end;
     margin-bottom: 2vh;
   }
+
 }
+
     @media (min-width: 768px) {
       :local(.header) {
         display: flex;

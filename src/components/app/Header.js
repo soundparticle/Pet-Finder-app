@@ -43,6 +43,7 @@ class Header extends Component {
           }
         </nav>
         <Error/>
+        <hr/>
       </header>
     );
   }
