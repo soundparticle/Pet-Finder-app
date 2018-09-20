@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import PostPet from '../forms/PostPet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPet } from './actionsPets';
+import PostPet from '../forms/PostPet';
 
 
 class ListAPet extends Component {
