@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { addFavorite } from '../pets/actionsFavorites';
+import { addWant } from '../pets/actionsWants';
 import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
 import { getSeeker } from '../pets/reducers';
 import { getPets } from '../pets/reducersPets';
 import FavoriteButton from '../controls/FavoriteButton';
+import WantButton from '../controls/WantButton';
 import styles from './Slider.css';
 
 class Slider extends Component {
@@ -60,9 +62,13 @@ class Slider extends Component {
                 </header>
                 <img src={pet.images}></img>
 
-                <section>
+                <section className='buttons'>
                   <FavoriteButton 
                     onComplete={addFavorite}
+                    pet={pet}
+                  />
+                  <WantButton 
+                    onComplete={addWant}
                     pet={pet}
                   />
                 </section>
@@ -115,6 +121,6 @@ export default connect(
     seeker: getSeeker(state),
     pets: getPets(state)
   }),
-  { addFavorite }
+  { addFavorite, addWant }
 
 )(Slider);

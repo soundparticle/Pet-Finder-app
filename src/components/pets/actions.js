@@ -1,8 +1,8 @@
 import {  SEEKER_ADD, SEEKER_LOAD } from './reducers';
 import { postSeeker, loadSeeker } from '../../services/api';
 
-// export const loadInterested = () => ({
-//   type: INTERESTED_LOAD,
+// export const loadWants = () => ({
+//   type: WANTS_LOAD,
 //   payload: getPetsInterested()
 // });
 
