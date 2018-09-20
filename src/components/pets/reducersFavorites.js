@@ -8,7 +8,7 @@ export function favorites(state = [], { type, payload }) {
     case FAVORITE_ADD:
       return payload;
     case FAVORITE_REMOVE:
-      return state.filter(favorite => favorite.id === payload.id ? payload : favorite);
+      return state.filter(favorite => favorite.id === payload.id ? payload : favorite);      
     default:
       return state;
   }

@@ -10,7 +10,7 @@ jest.mock('../../services/api.js', () => ({
 }));
 
 
-describe.only('pets action creators', () => {
+describe('pets action creators', () => {
 
   it('loads pets', () => {
     const promise = Promise.resolve();

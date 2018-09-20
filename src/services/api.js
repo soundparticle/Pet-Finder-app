@@ -38,3 +38,6 @@ export const putPet = pet => {
   return put(`${PETS_URL}/${id}}`, copy);
 };
 
+export const putWant = (want) => put(`${SEEKER_URL}/wants`, want);
+export const deleteWant = id => del(`${SEEKER_URL}/${id}`);
+

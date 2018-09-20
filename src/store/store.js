@@ -6,6 +6,7 @@ import { user, checkedAuth } from '../components/auth/reducers';
 import { seeker } from '../components/pets/reducers';
 import { pets } from '../components/pets/reducersPets';
 import { favorites } from '../components/pets/reducersFavorites';
+import { wants } from '../components/pets/reducersWants';
 
 const rootReducer = combineReducers({
   error,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   seeker,
   pets,
   checkedAuth,
-  favorites
+  favorites,
+  wants
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
