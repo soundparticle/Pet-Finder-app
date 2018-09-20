@@ -1,32 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { filterPets } from '../pets/actionsPets';
 import PropTypes from 'prop-types';
 
 class PetFilter extends Component {
 
   state = {
-    zip: '',
-    species: '',
-    catBreed: '',
-    dogBreed: '',
-    size: '',
-    sex: '',
-    age: '',
-    sterilized: '',
-    kidFriendly: '',
-    petFriendly: '',
-    activityLevel: '',
+    zip: null,
+    species: null,
+    breedCat: null,
+    breedDog: null,
+    size: null,
+    sex: null,
+    age: null,
+    sterilized: null,
+    kidFriendly: null,
+    petFriendly: null,
+    activityLevel: null,
+
   }
 
-  // state = { 
-  //   filter: ''
-  // };
-
-  // static propTypes = {
-  //   onFilter: PropTypes.func.isRequired
-  // }
-
   static propTypes = {
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func,
+    filterPets: PropTypes.func
   }
 
   handleChange = ({ target }) => {
@@ -34,38 +30,17 @@ class PetFilter extends Component {
   }
 
   handleSubmit = event => {
-    //this.props.onFilter(this.state);
-    const { 
-      zip,  
-      species, 
-      catBreed, 
-      dogBreed,
-      size, 
-      sex, 
-      age, 
-      sterilized, 
-      kidFriendly, 
-      petFriendly, 
-      activityLevel, 
-    } = this.state;
     event.preventDefault();
-    //this.props.onFilter(this.state);
-    
 
-    this.props.onComplete({
-      zip: zip,
-      species: species,
-      catBreed: catBreed,
-      dogBreed: dogBreed,
-      size: size,
-      sex: sex,
-      age: age,
-      sterilized: sterilized,
-      kidFriendly: kidFriendly,
-      petFriendly: petFriendly,
-      activityLevel: activityLevel
-    });
-  }
+    const keys = Object.keys(this.state);
+    let filter = '?';
+
+    for(let i = 0; i < keys.length; i++) {
+      this.state[keys[i]] !== null ? filter += `&${keys[i]}=${this.state[keys[i]]}` : null;
+    }
+    this.props.filterPets(filter);
+
+    this.props.onComplete(filter);
 
   render() { 
     const { 
@@ -85,16 +60,27 @@ class PetFilter extends Component {
     return (
       <div>
         <h2>Narrow your search</h2>
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form onSubmit={this.handleSubmit}>
           
           <label>
             <h3>Location (zip code):</h3>
-            <input type="text" name="zip" value={zip} placeholder="zip code" pattern="^\d{5}(?:[-\s]\d{4})?$" size="7" minLength="5" maxLength="5"/>
+            <input 
+              type="text" name="zip" 
+              value={zip} placeholder="zip code" 
+              pattern="^\d{5}(?:[-\s]\d{4})?$" size="7" 
+              minLength="5" 
+              maxLength="5"
+              onChange={this.handleChange}
+            />
           </label>
 
           <label>
             <h3>Species</h3>
-            <select name="species" value={species} onChange={this.handleChange}>
+            <select 
+              name="species" 
+              value={species} 
+              onChange={this.handleChange}
+            >
               <option value="any">Any</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -103,6 +89,7 @@ class PetFilter extends Component {
 
           <label>
             <h3>Breed:</h3>
+
             <select name="catBreed" value={catBreed} onChange={this.handleChange}>
               <option value="domestic-shorthair">Domestic Shorthair</option>
               <option value="domestic-longhair">Domestic Longhair</option>
@@ -186,6 +173,7 @@ class PetFilter extends Component {
               <option value="staffordshire-bull-terrier">Staffordshire Bull Terrier</option>
               <option value="west-highland-white-terrier">West Highland White Terrier</option>
               <option value="yorkshire-terrier">Yorkshire Terrier</option>
+
             </select>
           </label>
 
@@ -202,16 +190,26 @@ class PetFilter extends Component {
 
           <label>
             <h3>Sex:</h3>
-            <select name="sex" value={sex} onChange={this.handleChange}>
+            <select 
+              name="sex" 
+              value={sex} 
+              onChange={this.handleChange}
+            >
+         
               <option value="any">Female</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
+
             </select>
           </label>
 
           <label>
             <h3>Age:</h3> 
-            <select name="age" value={age} onChange={this.handleChange}>
+            <select 
+              name="age" value={age} 
+              onChange={this.handleChange}
+            >
+       
               <option value="baby">Baby</option>
               <option value="young">Young</option>
               <option value="adult">Adult</option>
@@ -221,7 +219,12 @@ class PetFilter extends Component {
 
           <label>
             <h3>Sterilized: </h3>
-            <select name="sterilized" value={sterilized} onChange={this.handleChange}>
+            <select 
+              name="sterilized" 
+              value={sterilized} 
+              onChange={this.handleChange}
+            >
+  
               <option value="any">Any</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -230,7 +233,12 @@ class PetFilter extends Component {
 
           <label>
             <h3>Kid Friendly:</h3>
-            <select name="kid-friendly" value={kidFriendly} onChange={this.handleChange}>
+            <select 
+              name="kidFriendly" 
+              value={kidFriendly} 
+              onChange={this.handleChange}
+            >
+
               <option value="any">Any</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -239,7 +247,11 @@ class PetFilter extends Component {
 
           <label>
             <h3>Pet Friendly:</h3>
-            <select name="pet-friendly" value={petFriendly} onChange={this.handleChange}>
+            <select 
+              name="petFriendly" 
+              value={petFriendly} 
+              onChange={this.handleChange}
+            >
               <option value="any">Any</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -247,12 +259,18 @@ class PetFilter extends Component {
           </label>
 
           <label>
-            <h3>Kid Friendly:</h3>
-            <select name="activity-level" value={activityLevel} onChange={this.handleChange}>
+            <h3>Activity Level:</h3>
+            <select 
+              name="activityLevel" 
+              value={activityLevel} 
+              onChange={this.handleChange}
+            >
+         
               <option value="any">Any</option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
-              <option value="high">Medium</option>
+              <option value="high">High</option>
+
             </select>
           </label>
 
@@ -263,4 +281,7 @@ class PetFilter extends Component {
   }
 }
  
-export default PetFilter;
+export default connect(
+  null,
+  { filterPets }
+)(PetFilter);

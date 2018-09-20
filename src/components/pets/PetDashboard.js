@@ -10,8 +10,7 @@ import ImageSlider from '../imageSlider/Slider';
 import { getPets } from './reducersPets';
 
 class PetDashboard extends Component {
-
-
+  
   static propTypes = {
     seeker: PropTypes.object,
     pets: PropTypes.array,
