@@ -1,4 +1,13 @@
 .app-container {
+  background-color: rgb(220, 248, 175);
+
   box-sizing: border-box;
   height: 100vh;
+  width: 100vw;
+  h2 {
+    // background-color: rgb(232, 252, 201);
+
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

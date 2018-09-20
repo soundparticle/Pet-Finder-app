@@ -35,7 +35,7 @@ class GetStarted extends Component {
           <h2>Get Started</h2>
         </header>
         <section>
-          <p>Lorem ipsum dolor amet disrupt fixie cardigan gluten-free dreamcatcher. Flannel waistcoat kombucha, affogato poke occupy meh cronut tilde quinoa narwhal. Pitchfork viral hoodie ramps. Gochujang VHS banjo, succulents venmo cliche craft beer kinfolk cornhole subway tile vexillologist letterpress affogato. Bicycle rights skateboard letterpress, fanny pack raw denim etsy raclette blog.</p>
+          <p> If you&apos;re looking for a new cat or dog, just fill out the form requesting details about your lifestyle and what you&apos;re looking for, and we&apos;ll find the most ideal matches for you. Its that easy!</p>
           <button onClick={this.onOpenModal}>Find a pet</button>
           <Modal classNames={styles} open={open} onClose={this.onCloseModal} center={false} animationDuration={100} showCloseIcon={false}>
             <PetSeeker/>
@@ -43,7 +43,7 @@ class GetStarted extends Component {
         </section>
 
         <section>
-          <p>Lorem ipsum dolor amet disrupt fixie cardigan gluten-free dreamcatcher. Flannel waistcoat kombucha, affogato poke occupy meh cronut tilde quinoa narwhal. Pitchfork viral hoodie ramps. Gochujang VHS banjo, succulents venmo cliche craft beer kinfolk cornhole subway tile vexillologist letterpress affogato. Bicycle rights skateboard letterpress, fanny pack raw denim etsy raclette blog.</p>
+          <p>Looking for a home for your pet? Post you pet info here!</p>
           <button onClick={this.onOpenModel2}>Post a pet</button>
           <Modal classNames={styles} open={open2} onClose={this.onCloseModel2} center={false} animationDuration={100} showCloseIcon={false}>
             <PostPet/>
