@@ -124,6 +124,7 @@ class PostPet extends Component {
           <label>
             <h3>Animal:</h3>
             <select name="species" value={species} onChange={this.handleChange}>
+              <option value="any">Any</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
@@ -131,7 +132,7 @@ class PostPet extends Component {
 
           <label>
             <h3>Breed:</h3>
-
+            <h4>Cat</h4>
             <select name="breedCat" value={breedCat} onChange={this.handleChange}>
               <option value="Unknown">Unknown</option>
               <option value="Domestic Shorthair">Domestic Shorthair</option>
@@ -182,8 +183,10 @@ class PostPet extends Component {
               <option value="Turkish Van">Turkish Van</option>
             </select>
 
+            <h4>Dog</h4>
             <select name="breedDog" value={breedDog} onChange={this.handleChange}>
               <option value="Unknown">Unknown</option>
+              <option value="Mixed-Breed">Mixed-Breed</option>
               <option value="Beagle">Beagle</option> 
               <option value="Bernese Mountain Dog">Bernese Mountain Dog</option>
               <option value="Border Collie">Border Collie</option>
@@ -233,37 +236,38 @@ class PostPet extends Component {
           <label>
             <h3>Sex:</h3>
             <select name="sex" value={sex} onChange={this.handleChange}>
-              <option value="male">Male</option>
+              <option value="unknown">Unknown</option>
               <option value="female">Female</option>
+              <option value="male">Male</option>
             </select>
           </label>
 
           <label>
             <h3>Age:</h3> 
             <select name="age" value={age} onChange={this.handleChange}>
+              <option value="Unknown">Don&#39;t know</option>
               <option value="Baby">Baby</option>
               <option value="Young">Young</option>
               <option value="Adult">Adult</option>
               <option value="Senior">Senior</option>
-              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
 
           <label>
             <h3>Sterilized: </h3>
             <select name="sterilized" value={sterilized} onChange={this.handleChange}>
+              <option value="Unknown">Unknown</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
 
           <label>
             <h3>Plays well with children:</h3>
             <select name="kidFriendly" value={kidFriendly} onChange={this.handleChange}>
+              <option value="Unknown">Unknown</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Don&#39;t know</option>
             </select>
           </label>
 
@@ -272,13 +276,14 @@ class PostPet extends Component {
             <select name="petFriendly" value={petFriendly} onChange={this.handleChange}>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
-              <option value="Unknown">Don&#39;t know</option>
+              <option value="Unknown">Unknown</option>
             </select>
           </label>
 
           <label>
             <h3>Activity level required:</h3> 
             <select name="activityLevel" value={activityLevel} onChange={this.handleChange}>
+              <option value="unknown">Unknown</option>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
