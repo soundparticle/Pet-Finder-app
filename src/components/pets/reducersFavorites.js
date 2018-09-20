@@ -6,7 +6,7 @@ export const getFavorites = state => state.favorites;
 export function favorites(state = [], { type, payload }) {
   switch(type) {
     case FAVORITE_ADD:
-      return payload;
+      return payload.favorites;
     case FAVORITE_REMOVE:
       return state.filter(favorite => favorite.id === payload.id ? payload : favorite);      
     default:

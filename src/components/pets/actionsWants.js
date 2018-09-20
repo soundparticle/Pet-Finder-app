@@ -8,9 +8,10 @@ import {
   deleteWant 
 } from '../../services/api';
 
-export const addWant = (want) => ({
+
+export const addWant = (pet) => ({
   type: WANT_ADD,
-  payload: putWant(want)
+  payload: putWant(pet)
 });
 
 export const removeWant = (id) => ({
