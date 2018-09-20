@@ -13,6 +13,7 @@ import ListAPet from '../pets/ListAPet';
 import PetSeeker from '../forms/PetSeeker';
 import GetStarted from './GetStarted';
 import Dashboard from '../dashboard/Dashboard';
+import mainImage from '../../assets/images/pets-footer_img.png';
 
 class App extends PureComponent {
 
@@ -34,6 +35,7 @@ class App extends PureComponent {
         <div className="app-container">
           <Header/>
           <main>
+            <img className="main-image" src={mainImage}/>
             { checkedAuth &&
               <Switch>
                 <Route exact path="/" component={Home}/>
