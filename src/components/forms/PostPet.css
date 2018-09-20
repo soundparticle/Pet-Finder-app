@@ -1,4 +1,37 @@
 :local(.PostPet) {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  h6 {
+    margin: 2vh;
+  }
+
+  select {
+    border: 1px solid black;
+  }
+
+  label {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    width: 50vw;
+  }
+}
+
+@media (min-width: 768px) {
+  :local(.PostPet) {
+    
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 50vw;
+    }
+  }
 }
