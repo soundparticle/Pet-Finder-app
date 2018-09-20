@@ -92,102 +92,104 @@ class PetFilter extends Component {
 
           <label>
             <h3>Breed:</h3>
+            {species === 'cat'
+              ?
+              <select  
+                name="catBreed" 
+                value={catBreed} 
+                onChange={this.handleChange}
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="domestic-shorthair">Domestic Shorthair</option>
+                <option value="domestic-longhair">Domestic Longhair</option>
+                <option value="abyssinian">Abyssinian</option>
+                <option value="american-bobtail">American Bobtail</option>
+                <option value="american-curl">American Curl</option>
+                <option value="american-shorthair">American Shorthair</option>
+                <option value="american-wirehair">American Wirehair</option>
+                <option value="balinese">Balinese</option>
+                <option value="bengal">Bengal</option>
+                <option value="birman">Birman</option>
+                <option value="bombay">Bombay</option>
+                <option value="british-shorthair">British Shorthair</option>
+                <option value="burmese">Burmese</option>
+                <option value="burmilla">Burmilla</option>
+                <option value="chartreux">Chartreux</option>
+                <option value="colorpoint-shorthair">Colorpoint Shorthair</option>
+                <option value="cornish-rex">Cornish Rex</option>
+                <option value="devon-rex">Devon Rex</option>
+                <option value="egyptian-mau">Egyptian Mau</option>
+                <option value="european-burmese">European Burmese</option>
+                <option value="exotic">Exotic</option>
+                <option value="havana-brown">Havana Brown</option>
+                <option value="japanese-bobtail">Japanese Bobtail</option>
+                <option value="khao-manee">Khao Manee</option>
+                <option value="korat">Korat</option>
+                <option value="laPerm">LaPerm</option>
+                <option value="lykoi">Lykoi</option>
+                <option value="maine-coon-cat">Maine Coon Cat</option>
+                <option value="manx">Manx</option>
+                <option value="norwegian-forest-cat">Norwegian Forest Cat</option>
+                <option value="ocicat">Ocicat</option>
+                <option value="oriental">Oriental</option>
+                <option value="persian">Persian</option>
+                <option value="ragamuffin">Ragamuffin</option>
+                <option value="ragdoll">Ragdoll</option>
+                <option value="russian-blue">Russian Blue</option>
+                <option value="scottish-fold">Scottish Fold</option>
+                <option value="selkirk-rex">Selkirk Rex</option>
+                <option value="siamese">Siamese</option>
+                <option value="siberian">Siberian</option>
+                <option value="singapura">Singapura</option>
+                <option value="somali">Somali</option>
+                <option value="sphynx">Sphynx</option>
+                <option value="tonkinese">Tonkinese</option>
+                <option value="turkish-angora">Turkish Angora</option>
+                <option value="turkish-van">Turkish Van</option>
+              </select>
+              :
+              <select 
+                name="dogBreed" 
+                value={dogBreed} 
+                onChange={this.handleChange}
+              >
+                <option value="" disabled>Select an option</option>
+                <option value="mixed-breed">Mixed-Breed</option>
+                <option value="beagle">Beagle</option> 
+                <option value="bernese-mountain-dog">Bernese Mountain Dog</option>
+                <option value="border-collie">Border Collie</option>
+                <option value="boxer">Boxer</option>
+                <option value="brittany-spaniel">Brittany Spaniel</option>
+                <option value="bulldog">Bulldog</option>
+                <option value="cavalier-king-charles-spaniel">Cavalier King Charles Spaniel</option>
+                <option value="chihuahua">Chihuahua</option>
+                <option value="dachshund">Dachshund (all varieties)</option>
+                <option value="dobermann">Dobermann</option>
+                <option value="english-cocker-spaniel">English Cocker Spaniel</option>
+                <option value="english-setter">English Setter</option>
+                <option value="english-springer-spaniel">English Springer Spaniel</option>
+                <option value="french-bulldog">French Bulldog</option>
+                <option value="german-shepherd">German Shepherd</option>
+                <option value="german-shorthaired-pointer">German Shorthaired Pointer</option>
+                <option value="german-spitz">German Spitz</option>
+                <option value="golden-retriever">Golden Retriever</option>
+                <option value="great-dane">Great Dane</option>
+                <option value="jack-russell-terrier">Jack Russell Terrier</option>
+                <option value="labrador-retriever">Labrador Retriever</option>
+                <option value="maltese">Maltese</option>
+                <option value="miniature-schnauzer">Miniature Schnauzer</option>
+                <option value="pomeranian">Pomeranian</option>
+                <option value="poodle">Poodle</option>
+                <option value="pug">Pug</option>
+                <option value="rottweiler">Rottweiler</option>
+                <option value="shetland-sheepdog">Shetland Sheepdog</option>
+                <option value="shih-tzu">Shih Tzu</option>
+                <option value="staffordshire-bull-terrier">Staffordshire Bull Terrier</option>
+                <option value="west-highland-white-terrier">West Highland White Terrier</option>
+                <option value="yorkshire-terrier">Yorkshire Terrier</option>
 
-            <select 
-              name="catBreed" 
-              value={catBreed} 
-              onChange={this.handleChange}
-            >
-              <option value="" disabled>Select an option</option>
-              <option value="domestic-shorthair">Domestic Shorthair</option>
-              <option value="domestic-longhair">Domestic Longhair</option>
-              <option value="abyssinian">Abyssinian</option>
-              <option value="american-bobtail">American Bobtail</option>
-              <option value="american-curl">American Curl</option>
-              <option value="american-shorthair">American Shorthair</option>
-              <option value="american-wirehair">American Wirehair</option>
-              <option value="balinese">Balinese</option>
-              <option value="bengal">Bengal</option>
-              <option value="birman">Birman</option>
-              <option value="bombay">Bombay</option>
-              <option value="british-shorthair">British Shorthair</option>
-              <option value="burmese">Burmese</option>
-              <option value="burmilla">Burmilla</option>
-              <option value="chartreux">Chartreux</option>
-              <option value="colorpoint-shorthair">Colorpoint Shorthair</option>
-              <option value="cornish-rex">Cornish Rex</option>
-              <option value="devon-rex">Devon Rex</option>
-              <option value="egyptian-mau">Egyptian Mau</option>
-              <option value="european-burmese">European Burmese</option>
-              <option value="exotic">Exotic</option>
-              <option value="havana-brown">Havana Brown</option>
-              <option value="japanese-bobtail">Japanese Bobtail</option>
-              <option value="khao-manee">Khao Manee</option>
-              <option value="korat">Korat</option>
-              <option value="laPerm">LaPerm</option>
-              <option value="lykoi">Lykoi</option>
-              <option value="maine-coon-cat">Maine Coon Cat</option>
-              <option value="manx">Manx</option>
-              <option value="norwegian-forest-cat">Norwegian Forest Cat</option>
-              <option value="ocicat">Ocicat</option>
-              <option value="oriental">Oriental</option>
-              <option value="persian">Persian</option>
-              <option value="ragamuffin">Ragamuffin</option>
-              <option value="ragdoll">Ragdoll</option>
-              <option value="russian-blue">Russian Blue</option>
-              <option value="scottish-fold">Scottish Fold</option>
-              <option value="selkirk-rex">Selkirk Rex</option>
-              <option value="siamese">Siamese</option>
-              <option value="siberian">Siberian</option>
-              <option value="singapura">Singapura</option>
-              <option value="somali">Somali</option>
-              <option value="sphynx">Sphynx</option>
-              <option value="tonkinese">Tonkinese</option>
-              <option value="turkish-angora">Turkish Angora</option>
-              <option value="turkish-van">Turkish Van</option>
-            </select>
-
-            <select 
-              name="dogBreed" 
-              value={dogBreed} 
-              onChange={this.handleChange}
-            >
-              <option value="" disabled>Select an option</option>
-              <option value="mixed-breed">Mixed-Breed</option>
-              <option value="beagle">Beagle</option> 
-              <option value="bernese-mountain-dog">Bernese Mountain Dog</option>
-              <option value="border-collie">Border Collie</option>
-              <option value="boxer">Boxer</option>
-              <option value="brittany-spaniel">Brittany Spaniel</option>
-              <option value="bulldog">Bulldog</option>
-              <option value="cavalier-king-charles-spaniel">Cavalier King Charles Spaniel</option>
-              <option value="chihuahua">Chihuahua</option>
-              <option value="dachshund">Dachshund (all varieties)</option>
-              <option value="dobermann">Dobermann</option>
-              <option value="english-cocker-spaniel">English Cocker Spaniel</option>
-              <option value="english-setter">English Setter</option>
-              <option value="english-springer-spaniel">English Springer Spaniel</option>
-              <option value="french-bulldog">French Bulldog</option>
-              <option value="german-shepherd">German Shepherd</option>
-              <option value="german-shorthaired-pointer">German Shorthaired Pointer</option>
-              <option value="german-spitz">German Spitz</option>
-              <option value="golden-retriever">Golden Retriever</option>
-              <option value="great-dane">Great Dane</option>
-              <option value="jack-russell-terrier">Jack Russell Terrier</option>
-              <option value="labrador-retriever">Labrador Retriever</option>
-              <option value="maltese">Maltese</option>
-              <option value="miniature-schnauzer">Miniature Schnauzer</option>
-              <option value="pomeranian">Pomeranian</option>
-              <option value="poodle">Poodle</option>
-              <option value="pug">Pug</option>
-              <option value="rottweiler">Rottweiler</option>
-              <option value="shetland-sheepdog">Shetland Sheepdog</option>
-              <option value="shih-tzu">Shih Tzu</option>
-              <option value="staffordshire-bull-terrier">Staffordshire Bull Terrier</option>
-              <option value="west-highland-white-terrier">West Highland White Terrier</option>
-              <option value="yorkshire-terrier">Yorkshire Terrier</option>
-
-            </select>
+              </select>
+            }
           </label>
 
           <label>
