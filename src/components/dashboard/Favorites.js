@@ -1,30 +1,39 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadFavorites } from '../pets/actionsFavorites';
-import { getFavorites } from '../pets/reducersFavorites';
-import PetItem from '../pets/PetItem';
+import { load } from '../pets/actions';
+import { loadPet } from '../pets/actionsPets';
+import { getSeeker } from '../pets/reducers';
+import { getPets } from '../pets/reducersPets';
+import FavPetItem from '../pets/FavPetItem';
 
 class Favorites extends Component {
 
-  static propTypes = {
-    favorites: PropTypes.array,
-    loadFavorites: PropTypes.func.isRequired
+  state = {
+    favPets: []
   }
 
-  // componentDidMount() {
-  //   this.props.loadFavorites();
-  // }
+  static propTypes = {
+    favorites: PropTypes.array,
+    load: PropTypes.func.isRequired,
+    loadPet: PropTypes.func.isRequired,
+    pets: PropTypes.array
+  }
+
+  componentDidMount() { 
+    this.setState({ favPets: this.props.pets.filter(pet => this.props.favorites.some(id => pet._id === id)) });
+  }
   
   render() { 
 
     const { favorites } = this.props;
+    const { favPets } = this.state;
     return ( 
       <section>
         <h3>Favorites Component</h3>
         {favorites && <ul>
-          {favorites.map(favorite => {
-            return <PetItem key={favorite.id} pet={favorite}/>;
+          {favPets.map(favorite => {
+            return <FavPetItem key={favorite._id} fav={favorite}/>;
           })}
         </ul>
         }
@@ -35,7 +44,8 @@ class Favorites extends Component {
  
 export default connect(
   state => ({
-    favorites: getFavorites(state)
+    favorites: getSeeker(state).favorites,
+    pets: getPets(state)
   }),
-  { loadFavorites }
+  { load, loadPet }
 )(Favorites);

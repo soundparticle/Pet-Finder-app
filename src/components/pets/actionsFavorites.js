@@ -1,14 +1,5 @@
-import { 
-  FAVORITES_LOAD,
-  FAVORITE_ADD, 
-  FAVORITE_REMOVE,
-} from './reducersFavorites';
-import { putFavorite, loadSeeker } from '../../services/api';
-
-export const loadFavorites = () => ({
-  type: FAVORITES_LOAD,
-  payload: loadSeeker().then()
-});
+import { FAVORITE_ADD, FAVORITE_REMOVE } from './reducersFavorites';
+import { putFavorite } from '../../services/api';
 
 export const addFavorite = pet => ({
   type: FAVORITE_ADD,

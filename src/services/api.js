@@ -7,9 +7,6 @@ const SEEKER_URL = `${URL}/seekers`;
 
 const PETS_URL = `${URL}/pets`;
 
-// export const getPetsInterested = () => get(INTERESTED_URL);
-// export const getPetsFavorites = () => get(FAVORITES_URL);
-
 export const signin = credentials => post(`${AUTH_URL}/signin`, credentials);
 export const signup = credentials => post(`${AUTH_URL}/signup`, credentials);
 
@@ -24,7 +21,6 @@ export const loadSeeker = () => get(SEEKER_URL);
 
 export const putFavorite = (favorite) => put(`${SEEKER_URL}/favorites`, favorite); 
 export const getPetFilter = options => {
-  console.log('OPTIONS!!!!', options);
   return get(`${PETS_URL}/filter/${options}`);
 };
 
@@ -37,4 +33,3 @@ export const putPet = pet => {
   const { id, ...copy } = pet;
   return put(`${PETS_URL}/${id}}`, copy);
 };
-

@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PetDisplay from './PetDisplay';
+import FavPetDisplay from './FavPetDisplay';
 import FavoriteButton from '../controls/FavoriteButton';
 
-class PetItem extends Component {
+class FavPetItem extends Component {
 
   static propTypes = {
-    pet: PropTypes.object.isRequired
+    fav: PropTypes.object.isRequired
   }
 
   render() { 
 
-    const { pet } = this.props;
+    const { fav } = this.props;
     return (
       <li>
-        <PetDisplay pet={pet}/>
+        <FavPetDisplay fav={fav}/>
         <FavoriteButton/>
       </li>
     );
   }
 }
  
-export default PetItem;
+export default FavPetItem;
