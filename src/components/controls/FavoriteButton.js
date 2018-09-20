@@ -11,6 +11,7 @@ class FavoriteButton extends Component {
 
   handleSubmit = () => {
     const { pet } = this.props;
+    console.log('PETID', pet._id);
     this.props.onComplete({ id: pet._id });
   }
   render() { 

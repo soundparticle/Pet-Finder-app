@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { getSeeker } from '../pets/reducers';
 import { getPets } from '../pets/reducersPets';
 import FavoriteButton from '../controls/FavoriteButton';
+import styles from './Slider.css';
 
 class Slider extends Component {
 
@@ -38,38 +39,54 @@ class Slider extends Component {
     this.setState({ slideCount: slideCount - 1 });
   }
 
+  // handleFavorite = pet => {
+  //   this.props.addFavorite(pet);
+  // }
+
 
   render() { 
     const { slideCount } = this.state;
     const { addFavorite, pets } = this.props;
 
     return (
-      <div>
-        {slideCount !== 0 
-          ? <BackArrow previousImage={this.previousImage}/> 
-          : ''
-        }
+      <div className={styles.slider}>
         {pets.map((pet) => {
           if(pets.indexOf(pet) === slideCount) {
 
             return (
-              <div key={pet._id}>
-                <p>{pet.name}</p>
-                {/* <img src=""></img> */}
-                <p>Description</p>
-                <FavoriteButton 
-                  onComplete={addFavorite}
-                  pet={pet}
-                />
+              <div className='petTile' key={pet._id}>
+                <header>
+                  <h3>{pet.name}</h3>
+                </header>
+                <img src={pet.images}></img>
+
+                <section>
+                  <FavoriteButton 
+                    onComplete={addFavorite}
+                    pet={pet}
+                  />
+                </section>
+
+                <section>
+                  <p>Description a loa;sdhgl;ajshdg ;lashdglha;s dg l;ajhsdgjhas;djg ajshdg ajshdg;l a;lsdgh asd ;alksdg lahsd;lgha;sdhg;ahsd;gh a;sd g</p>
+                </section>
               </div>
             );
           }
           return '';
         })}
-        {slideCount !== (pets.length - 1) 
-          ? <NextArrow nextImage={this.nextImage}/> 
-          : ''
-        } 
+
+        <section>
+          {slideCount !== 0 
+            ? <BackArrow previousImage={this.previousImage}/> 
+            : ''
+          }
+          {slideCount !== (pets.length - 1) 
+            ? <NextArrow nextImage={this.nextImage}/> 
+            : ''
+          } 
+        </section>
+        
       </div>
     );
   }
