@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './PostPet.css';
+import styles from './PostForm.css';
 import PropTypes from 'prop-types';
 
-class PostPet extends Component {
+class PostForm extends Component {
 
   state = {
     zip: '',
@@ -20,7 +20,7 @@ class PostPet extends Component {
     activityLevel: '',
     description: '',
     healthBehavior: '',
-    photo: ''
+    images: ''
   }
 
   static propTypes = {
@@ -29,51 +29,14 @@ class PostPet extends Component {
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
-    console.log(target.value);
-    
   }
 
   handleSubmit = event => {
-    const { 
-      zip, 
-      rehome,
-      name, 
-      species, 
-      catBreed, 
-      dogBreed,
-      size, 
-      sex, 
-      age, 
-      sterilized, 
-      kidFriendly, 
-      petFriendly, 
-      activityLevel, 
-      description, 
-      healthBehavior, 
-      photo 
-    } = this.state;
     event.preventDefault();
+    this.props.onComplete(this.state);
 
-    this.props.onComplete({
-      zip: zip,
-      rehome: rehome,
-      name: name,
-      species: species,
-      catBreed: catBreed,
-      dogBreed: dogBreed,
-      size: size,
-      sex: sex,
-      age: age,
-      sterilized: sterilized,
-      kidFriendly: kidFriendly,
-      petFriendly: petFriendly,
-      activityLevel: activityLevel,
-      description: description,
-      healthBehavior: healthBehavior,
-      photo: photo
-    });
   }
-
+  
   render() { 
     const { 
       zip,
@@ -91,11 +54,11 @@ class PostPet extends Component {
       activityLevel, 
       description, 
       healthBehavior, 
-      photo 
+      images 
     } = this.state;
 
     return (
-      <div className={styles.PostPet}>
+      <div className={styles.postPet}>
         <h2>Form to post a pet</h2>
         <p>In order to find the perfect home for your pet, please fill out all fields.</p>
         <form onSubmit={this.handleSubmit}>
@@ -284,7 +247,7 @@ class PostPet extends Component {
 
           <label>
 
-            <h6>Plays well with children:</h6>
+            <h6>Plays well with kidFriendly:</h6>
             <select name="kid-friendly" value={kidFriendly} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -325,8 +288,8 @@ class PostPet extends Component {
           </label>
 
           <label>
-            <h6>Upload Photo:</h6>
-            <input name="photo" value={photo} onChange={this.handleChange} />
+            <h6>Upload images:</h6>
+            <input name="images" value={images} onChange={this.handleChange} />
           </label>
           <button>rehome</button>
         </form>
@@ -335,4 +298,5 @@ class PostPet extends Component {
   }
 }
  
-export default PostPet;
+export default PostForm
+;

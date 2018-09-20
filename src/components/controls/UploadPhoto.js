@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
-import styles from './Home.css';
+import PostForm from '../forms/PostFrom';
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
 const options = 'w_300';
@@ -11,7 +11,7 @@ export const getUrl = (url, options = '') => {
   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
 };
 
-class Home extends Component {
+class UploadPhoto extends Component {
 
   state = {
     image: null,
@@ -52,28 +52,22 @@ class Home extends Component {
   render() { 
     // const { image } = this.state;
     return (
-      <div className={styles.home}>
-        {/* <h1>Home/About Page</h1> */}
-        <h2>Welcome to Home Swap</h2>
-        <div className="container">
-          <div className="summary">
-            <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help!</p>
-          </div>
-          <div className="dropzone">
-            <Dropzone 
-              onDrop={this.handleDrop} 
-              multiple 
-              accept="image/*" 
-              // style={styles.dropzone}
-            >
-              <p>Drop your files or click here to upload</p>
-            </Dropzone>
-          </div>
-        </div>
+        
+      <div>
+        <PostForm />
+        <Dropzone 
+          onDrop={this.handleDrop} 
+          multiple 
+          accept="image/*" 
+          // style={styles.dropzone}
+        >
+          <p>Drop your files or click here to upload</p>
+        </Dropzone>
       </div>
+   
 
     );
   }
 }
  
-export default Home;
+export default UploadPhoto;
