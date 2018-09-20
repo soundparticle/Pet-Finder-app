@@ -19,13 +19,14 @@ export const verifyUser = token => get(`${AUTH_URL}/verify`, {
   }
 });
 
-
 export const postSeeker = details => post(SEEKER_URL, details);
 export const loadSeeker = () => get(SEEKER_URL);
 
 export const putFavorite = (favorite) => put(`${SEEKER_URL}/favorites`, favorite); 
-
-//export const getFavorites = 
+export const getPetFilter = options => {
+  console.log('OPTIONS!!!!', options);
+  return get(`${PETS_URL}/filter/${options}`);
+};
 
 export const getPets = () => get(PETS_URL);
 export const getPet = id => get(`${PETS_URL}/${id}`);

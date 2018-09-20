@@ -4,6 +4,7 @@ export const PET_LOAD = 'PET_LOAD';
 export const PET_ADD = 'PET_ADD';
 export const PET_UPDATE = 'PET_UPDATE';
 export const PET_REMOVE = 'PET_REMOVE';
+export const PET_FILTER = 'PET_FILTER';
 
 export const getPets = state => state.pets;
 
@@ -15,6 +16,8 @@ export function pets(state = [], { type, payload }) {
       return payload;
     case PET_ADD:
       return [...state, payload];
+    case PET_FILTER:
+      return payload;
     case PET_UPDATE:
       return state.map(pet => pet.id === payload.id ? payload : pet);
     case PET_REMOVE:

@@ -1,6 +1,21 @@
-import { PETS_LOAD, PET_LOAD, PET_ADD, PET_UPDATE, PET_REMOVE } from './reducersPets';
+import { 
+  PETS_LOAD, 
+  PET_LOAD, 
+  PET_ADD, 
+  PET_UPDATE, 
+  PET_REMOVE,
+  PET_FILTER 
+} from './reducersPets';
+
 // need both PETS_LOAD and PET_LOAD ??
-import { deletePet, getPet, getPets, postPet, putPet } from '../../services/api';
+import { 
+  deletePet, 
+  getPet, 
+  getPets, 
+  postPet, 
+  putPet,
+  getPetFilter 
+} from '../../services/api';
 
 export const loadPets = () => ({
   type: PETS_LOAD,
@@ -10,6 +25,11 @@ export const loadPets = () => ({
 export const loadPet = id => ({
   type: PET_LOAD,
   payload: getPet(id)
+});
+
+export const filterPets = options => ({
+  type: PET_FILTER,
+  payload: getPetFilter(options)
 });
 
 export const addPet = data => ({
