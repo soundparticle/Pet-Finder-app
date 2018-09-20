@@ -26,8 +26,7 @@ class Header extends Component {
       <header className={styles.header}>
         { user && <span>Welcome, {user.name}</span> }
         <nav>
-          {/* TODO: add logo as home */}
-          <Link to="/"><img className="logo" src={logo}/></Link>
+          <Link className="logo-link" to="/"><img className="logo" src={logo}/></Link>
           { user
             ? <Fragment>
               <Link to="/find">Find a Pet</Link>
@@ -44,6 +43,7 @@ class Header extends Component {
           }
         </nav>
         <Error/>
+        <hr/>
       </header>
     );
   }

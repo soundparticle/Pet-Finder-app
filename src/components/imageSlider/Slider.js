@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
+import { addFavorite } from '../pets/actionsFavorites';
+import { connect } from 'react-redux'; 
+import PropTypes from 'prop-types';
+import { getSeeker } from '../pets/reducers';
+import { getPets } from '../pets/reducersPets';
+import FavoriteButton from '../controls/FavoriteButton';
 
 class Slider extends Component {
+
+
+  static propTypes = {
+    seeker: PropTypes.object,
+    pets: PropTypes.array,
+    addFavorite: PropTypes.func.isRequired
+  }
 
   state = {
     images: [{ image: 1, id: 1 }, { image: 2, id: 2 }, { image: 3, id: 3 }, { image: 4, id: 4 }],
@@ -26,8 +39,10 @@ class Slider extends Component {
     this.setState({ slideCount: slideCount - 1 });
   }
 
+
   render() { 
-    const { images, slideCount } = this.state;
+    const { slideCount } = this.state;
+    const { addFavorite, pets } = this.props;
 
     return (
       <div>
@@ -35,19 +50,24 @@ class Slider extends Component {
           ? <BackArrow previousImage={this.previousImage}/> 
           : ''
         }
-        {images.map((photo) => {
-          if(images.indexOf(photo) === slideCount) {
+        {pets.map((pet) => {
+          if(pets.indexOf(pet) === slideCount) {
+
             return (
-              <div key={photo.id}>
-                <p>{photo.image}</p>
+              <div key={pet._id}>
+                <p>{pet.name}</p>
                 {/* <img src=""></img> */}
                 <p>Description</p>
+                <FavoriteButton 
+                  onComplete={addFavorite}
+                  pet={pet}
+                />
               </div>
             );
           }
           return '';
         })}
-        {slideCount !== (images.length - 1) 
+        {slideCount !== (pets.length - 1) 
           ? <NextArrow nextImage={this.nextImage}/> 
           : ''
         } 
@@ -74,4 +94,11 @@ const NextArrow = (props) => (
   </div>
 );
  
-export default Slider;
+export default connect(
+  state => ({
+    seeker: getSeeker(state),
+    pets: getPets(state)
+  }),
+  { addFavorite }
+
+)(Slider);

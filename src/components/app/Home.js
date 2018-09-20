@@ -54,17 +54,26 @@ class Home extends Component {
     const { image } = this.state;
     return (
       <div className={styles.home}>
-        <h1>Home/About Page</h1>
-        <Dropzone 
-          onDrop={this.handleDrop} 
-          multiple 
-          accept="image/*" 
-          // style={styles.dropzone}
-        >
-          <p>Drop your files or click here to upload</p>
-          <img src={image}/>
-        </Dropzone>
+        {/* <h1>Home/About Page</h1> */}
+        <h2>Welcome to Home Swap</h2>
+        <div className="container">
+          <div className="summary">
+            <p>Looking for the perfect dog or cat for your home or need to find a home for a pet? We can help! Sign up for an account and search other users to find the perfect pet match for you or new home match for your pet! If you&apos;re looking for a new cat or dog, just fill out the form requesting details about your lifestyle and what you&apos;re looking for, and we&apos;ll find the most ideal matches for you. Its that easy!</p>
+          </div>
+          <div className="dropzone">
+            <Dropzone 
+              onDrop={this.handleDrop} 
+              multiple 
+              accept="image/*" 
+              // style={styles.dropzone}
+            >
+              <p>Drop your files or click here to upload</p>
+              <img src={image}/>
+            </Dropzone>
+          </div>
+        </div>
       </div>
+
     );
   }
 }

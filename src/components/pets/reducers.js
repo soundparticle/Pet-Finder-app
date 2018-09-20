@@ -3,7 +3,7 @@ export const SEEKER_LOAD = 'SEEKER_LOAD';
 
 export const getSeeker = state => state.seeker;
 
-export function seeker(state = [], { type, payload }) {
+export function seeker(state = null, { type, payload }) {
   switch(type) {
     case SEEKER_LOAD:
       return payload;
