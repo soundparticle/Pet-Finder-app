@@ -17,7 +17,7 @@ class PostForm extends Component {
     sterilized: 'Unknown',
     kidFriendly: '',
     petFriendly: 'Unknown',
-    activity: '',
+    activityLevel: '',
     description: '',
     healthBehavior: '',
     images: ''
@@ -51,7 +51,7 @@ class PostForm extends Component {
       sterilized, 
       kidFriendly, 
       petFriendly, 
-      activity, 
+      activityLevel, 
       description, 
       healthBehavior, 
       images 
@@ -66,6 +66,7 @@ class PostForm extends Component {
           <label>
             <h6>Reason for rehoming:</h6>
             <select name="reason" value={reason} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="none">None</option>
               <option value="allergy">Allergy</option>
               <option value="death">Death</option>
@@ -88,9 +89,9 @@ class PostForm extends Component {
           <label>
             <h6>Animal:</h6>
             <select name="species" value={species} onChange={this.handleChange}>
-              <option value="any">Any</option>
-              <option value="dog">Dog</option>
+              <option value="" disabled>Select an option</option>
               <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
             </select>
           </label>
 
@@ -102,8 +103,11 @@ class PostForm extends Component {
                 ?
                 <div>
                   <select name="catBreed" value={catBreed} onChange={this.handleChange}>
-                    <option value="other">Other</option>
+                    <option value="" disabled>Select an option</option>
+                    <option value="not-applicable">Not Applicable</option>
                     <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="mixed-breed">Mixed-Breed</option>
                     <option value="domestic-shorthair">Domestic Shorthair</option>
                     <option value="domestic-longhair">Domestic Longhair</option>
                     <option value="abyssinian">Abyssinian</option>
@@ -155,8 +159,10 @@ class PostForm extends Component {
                 :
                 <div>
                   <select name="dogBreed" value={dogBreed} onChange={this.handleChange}>
-                    <option value="other">Other</option>
+                    <option value="" disabled>Select an option</option>
+                    <option value="not-applicable">Not Applicable</option>
                     <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
                     <option value="mixed-breed">Mixed-Breed</option>
                     <option value="beagle">Beagle</option> 
                     <option value="bernese-mountain-dog">Bernese Mountain Dog</option>
@@ -195,10 +201,10 @@ class PostForm extends Component {
             }
           </label>
           
-
           <label>
             <h6>Size:</h6>
             <select name="size" value={size} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="extra-small">X-Small</option>
               <option value="small">Small</option>
               <option value="medium">Medium</option>
@@ -210,6 +216,7 @@ class PostForm extends Component {
           <label>
             <h6>Sex:</h6>
             <select name="sex" value={sex} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
@@ -219,6 +226,7 @@ class PostForm extends Component {
           <label>
             <h6>Age:</h6> 
             <select name="age" value={age} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Don&#39;t know</option>
               <option value="baby">Baby</option>
               <option value="young">Young</option>
@@ -230,6 +238,7 @@ class PostForm extends Component {
           <label>
             <h6>Sterilized: </h6>
             <select name="sterilized" value={sterilized} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -240,8 +249,8 @@ class PostForm extends Component {
 
             <h6>Plays well with kidFriendly:</h6>
             <select name="kid-friendly" value={kidFriendly} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
-
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -250,15 +259,17 @@ class PostForm extends Component {
           <label>
             <h6>Plays well with other pets:</h6>
             <select name="pet-friendly" value={petFriendly} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
+              <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
-              <option value="unknown">Unknown</option>
             </select>
           </label>
 
           <label>
             <h6>Activity level required:</h6> 
-            <select name="activityLevel" value={activity} onChange={this.handleChange}>
+            <select name="activityLevel" value={activityLevel} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
