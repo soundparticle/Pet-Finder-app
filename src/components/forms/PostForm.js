@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import styles from './PostForm.css';
 import PropTypes from 'prop-types';
+import Dropzone from 'react-dropzone';
+import axios from 'axios';
+// const USER_NAME = 'dsdmwoefe';
+// const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
+// const options = 'w_300';
+
+// export const getUrl = (url, options = '') => {
+//   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
+// };
 
 class PostForm extends Component {
 
@@ -9,18 +18,19 @@ class PostForm extends Component {
     reason: '',
     name: '',
     species: '',
-    catBreed: 'Unknown',
-    dogBreed: 'Unknown',
+    catBreed: 'unknown',
+    dogBreed: 'unknown',
     size: '',
     sex: '',
     age: '',
-    sterilized: 'Unknown',
+    sterilized: '',
     kidFriendly: '',
-    petFriendly: 'Unknown',
+    petFriendly: '',
     activityLevel: '',
     description: '',
     healthBehavior: '',
-    images: ''
+    images: '',
+    upload: ''
   }
 
   static propTypes = {
@@ -35,6 +45,29 @@ class PostForm extends Component {
     event.preventDefault();
     this.props.onComplete(this.state);
 
+  }
+
+  handleDrop = (files) => {
+    const uploaders = files.map(file => {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('tags', 'codeinfuse, medium, gist');
+      formData.append('upload_preset', 'poxg6yon'); 
+      formData.append('api_key', '1234567'); 
+      formData.append('timestamp', (Date.now() / 1000) | 0);
+      
+      return axios.post('https://api.cloudinary.com/v1_1/dsdmwoefe/image/upload', formData, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      }).then(({ data }) => {
+        const fileURL = data.secure_url; 
+        this.setState({ images: fileURL });
+      });
+    });
+
+    axios.all(uploaders)
+      .then(() => {
+        return console.log('success');                                                                                                          
+      });
   }
   
   render() { 
@@ -54,7 +87,7 @@ class PostForm extends Component {
       activityLevel, 
       description, 
       healthBehavior, 
-      images 
+      images
     } = this.state;
 
     return (
@@ -247,8 +280,8 @@ class PostForm extends Component {
 
           <label>
 
-            <h6>Plays well with kidFriendly:</h6>
-            <select name="kid-friendly" value={kidFriendly} onChange={this.handleChange}>
+            <h6>Plays well with kids:</h6>
+            <select name="kidFriendly" value={kidFriendly} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
@@ -258,7 +291,7 @@ class PostForm extends Component {
 
           <label>
             <h6>Plays well with other pets:</h6>
-            <select name="pet-friendly" value={petFriendly} onChange={this.handleChange}>
+            <select name="petFriendly" value={petFriendly} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
@@ -284,7 +317,7 @@ class PostForm extends Component {
 
           <label>
             <h6>Health/behavior: </h6>
-            <textarea name="health-behavior" value={healthBehavior} onChange={this.handleChange}></textarea>
+            <textarea name="healthBehavior" value={healthBehavior} onChange={this.handleChange}></textarea>
           </label>
 
           <label>
@@ -293,6 +326,17 @@ class PostForm extends Component {
           </label>
           <button>rehome</button>
         </form>
+        <Dropzone 
+          onDrop={this.handleDrop} 
+          multiple 
+          accept="image/*" 
+          // style={styles.dropzone}
+        >
+          {images 
+            ? <img src={images}/>
+            : <p>Drop your files or click here to upload</p>
+          }
+        </Dropzone>
       </div>
     );
   }

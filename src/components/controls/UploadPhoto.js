@@ -6,7 +6,6 @@ const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
 const options = 'w_300';
 
-
 export const getUrl = (url, options = '') => {
   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
 };
@@ -64,8 +63,6 @@ class UploadPhoto extends Component {
           <p>Drop your files or click here to upload</p>
         </Dropzone>
       </div>
-   
-
     );
   }
 }

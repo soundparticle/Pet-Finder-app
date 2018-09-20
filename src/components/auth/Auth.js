@@ -15,7 +15,7 @@ class Auth extends PureComponent {
     signup: PropTypes.func.isRequired,
     location: PropTypes.object
   }
- 
+  
   render() {
     const { user, signin, signup, location } = this.props;
     const redirect = location.state ? location.state.from : '/';

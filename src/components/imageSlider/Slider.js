@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { addFavorite } from '../pets/actionsFavorites';
+import { addWant } from '../pets/actionsWants';
 import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
 import { getSeeker } from '../pets/reducers';
 import { getPets } from '../pets/reducersPets';
-import FavoriteButton from '../controls/Button';
+import PetTile from './PetTile';
+import styles from './Slider.css';
 
 class Slider extends Component {
 
   static propTypes = {
     seeker: PropTypes.object,
     pets: PropTypes.array,
-    addFavorite: PropTypes.func.isRequired
+    addFavorite: PropTypes.func.isRequired,
+    addWant: PropTypes.func.isRequired
   }
 
   state = {
-    images: [{ image: 1, id: 1 }, { image: 2, id: 2 }, { image: 3, id: 3 }, { image: 4, id: 4 }],
     slideCount: 0
   };
 
@@ -38,38 +40,35 @@ class Slider extends Component {
     this.setState({ slideCount: slideCount - 1 });
   }
 
-
   render() { 
     const { slideCount } = this.state;
-    const { addFavorite, pets } = this.props;
+    const { addFavorite, addWant, pets } = this.props;
 
     return (
-      <div>
-        {slideCount !== 0 
-          ? <BackArrow previousImage={this.previousImage}/> 
-          : ''
-        }
+      <div className={styles.slider}>
         {pets.map((pet) => {
           if(pets.indexOf(pet) === slideCount) {
-
-            return (
-              <div key={pet._id}>
-                <p>{pet.name}</p>
-                {/* <img src=""></img> */}
-                <p>Description</p>
-                <FavoriteButton 
-                  onComplete={addFavorite}
-                  pet={pet}
-                />
-              </div>
-            );
+            return <PetTile
+              key={pet._id} 
+              pet={pet}
+              addFavorite={addFavorite}
+              addWant={addWant} 
+            />;
           }
-          return '';
+          else return null;
         })}
-        {slideCount !== (pets.length - 1) 
-          ? <NextArrow nextImage={this.nextImage}/> 
-          : ''
-        } 
+
+        <section>
+          {slideCount !== 0 
+            ? <BackArrow previousImage={this.previousImage}/> 
+            : ''
+          }
+          {slideCount !== (pets.length - 1) 
+            ? <NextArrow nextImage={this.nextImage}/> 
+            : ''
+          } 
+        </section>
+        
       </div>
     );
   }
@@ -98,6 +97,6 @@ export default connect(
     seeker: getSeeker(state),
     pets: getPets(state)
   }),
-  { addFavorite }
+  { addFavorite, addWant }
 
 )(Slider);
