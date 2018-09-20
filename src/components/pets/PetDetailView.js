@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class DetailView extends Component {
+
+  static propTypes = {
+    pet: PropTypes.object
+  };
 
   render() {
     const { pet } = this.props;
@@ -16,6 +21,17 @@ class DetailView extends Component {
           <li>
             <h3>species:</h3>
             <p>{pet.species}</p>
+          </li>
+
+          <li>
+            <h3>Breed:</h3>
+            {
+              pet.species === 'cat'
+                ?
+                pet.catBreed
+                :
+                pet.dogBreed
+            }
           </li>
 
           <li>

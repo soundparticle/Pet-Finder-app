@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getSeeker } from '../pets/reducers';
 import { getPets } from '../pets/reducersPets';
-import FavoriteButton from '../controls/FavoriteButton';
+import FavoriteButton from '../controls/Button';
 
 class Slider extends Component {
 
