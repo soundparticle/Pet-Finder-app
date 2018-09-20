@@ -6,17 +6,17 @@ import PropTypes from 'prop-types';
 class PetFilter extends Component {
 
   state = {
-    zip: null,
-    species: null,
-    breedCat: null,
-    breedDog: null,
-    size: null,
-    sex: null,
-    age: null,
-    sterilized: null,
-    kidFriendly: null,
-    petFriendly: null,
-    activityLevel: null,
+    zip: '',
+    species: '',
+    breedCat: '',
+    breedDog: '',
+    size: '',
+    sex: '',
+    age: '',
+    sterilized: '',
+    kidFriendly: '',
+    petFriendly: '',
+    activityLevel: '',
 
   }
 
@@ -27,7 +27,7 @@ class PetFilter extends Component {
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -35,12 +35,15 @@ class PetFilter extends Component {
     const keys = Object.keys(this.state);
     let filter = '?';
 
-    for(let i = 0; i < keys.length; i++) {
-      this.state[keys[i]] !== null ? filter += `&${keys[i]}=${this.state[keys[i]]}` : null;
-    }
+    // for(let i = 0; i < keys.length; i++) {
+    //   this.state[keys[i]] !== '' ? filter += `&${keys[i]}=${this.state[keys[i]]}` : null;
+    // }
+  
+    keys.filter(key => this.state[key] !== '' ? filter += `&${key}=${this.state[key]}` : null);
+    
     this.props.filterPets(filter);
-
     this.props.onComplete(filter);
+  };
 
   render() { 
     const { 

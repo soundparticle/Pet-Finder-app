@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './GetStarted.css';
 import Modal from 'react-responsive-modal';
 import PetSeeker from '../forms/PetSeeker';
-import PostPet from '../forms/PostPet';
+import PostForm from '../forms/PostForm';
 
 
 class GetStarted extends Component {
@@ -46,7 +46,7 @@ class GetStarted extends Component {
           <p>Looking for a home for your pet? Post you pet info here!</p>
           <button onClick={this.onOpenModel2}>Post a pet</button>
           <Modal classNames={styles} open={open2} onClose={this.onCloseModel2} center={false} animationDuration={100} showCloseIcon={false}>
-            <PostPet/>
+            <PostForm/>
           </Modal>
         </section>
       </div>

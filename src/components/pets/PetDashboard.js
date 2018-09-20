@@ -8,6 +8,7 @@ import PetSeeker from '../forms/PetSeeker';
 import PetFilter from '../forms/PetFilter';
 import ImageSlider from '../imageSlider/Slider';
 import { getPets } from './reducersPets';
+import { filterPets } from '../pets/actionsPets';
 
 class PetDashboard extends Component {
   
@@ -23,6 +24,7 @@ class PetDashboard extends Component {
     this.props.load();
     this.props.loadPets();
   }
+  
 
   render() { 
 
@@ -41,7 +43,7 @@ class PetDashboard extends Component {
         </section>
 
         <aside>
-          <PetFilter />
+          <PetFilter onComplete={filterPets}/>
         </aside>
       </div>
     );
