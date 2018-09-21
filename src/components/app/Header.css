@@ -79,4 +79,11 @@
         font-size: 3vw;
         margin-bottom: 6vh;
       }
+      .logo {
+        width: 25vw;
+        margin-top: 5vh;
+        margin-bottom: 7.8vh;
+        margin-right: 1vw;  
+        
+      }
     }
