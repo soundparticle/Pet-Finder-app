@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { addMatch } from '../pets/actions';
 import { putMatch } from '../../services/api';
 
 class WantButton extends Component {

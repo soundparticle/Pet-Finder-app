@@ -86,7 +86,7 @@ class PostForm extends Component {
 
     return (
       <div className={styles.postPet}>
-        <h2>Form to post a pet</h2>
+        <h2>Post a pet</h2>
         <p>In order to find the perfect home for your pet, please fill out all fields.</p>
         <form onSubmit={this.handleSubmit}>
           

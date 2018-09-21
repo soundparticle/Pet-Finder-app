@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { addFavorite } from '../pets/actionsFavorites';
 import { addWant } from '../pets/actionsWants';
@@ -20,15 +21,6 @@ class Slider extends Component {
   state = {
     slideCount: 0
   };
-
-  componentDidMount() {
-    // call api to fetch data
-  }
-
-  fetchPhotos() {
-    // function responsible for fetching data
-    // store in this.state.images
-  }
 
   nextImage = () => {
     const { slideCount } = this.state;
@@ -76,6 +68,7 @@ class Slider extends Component {
 
 const BackArrow = (props) => (
   <div  
+
     onClick={props.previousImage} 
     style={{ fontSize: '1em', marginRight: '12px' }}
   >

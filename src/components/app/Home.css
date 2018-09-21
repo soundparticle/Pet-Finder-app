@@ -2,10 +2,15 @@
   height: 60vh;
   text-align: center;
   width: 100vw;
-
+  font-family: 'Rubik', sans-serif;
+ 
+  img {
+    width: 60%;
+    align-self: center;
+  }
   
+ 
   .summary {
-    // background-color: rgb(220, 248, 175);
     margin-left: auto;
     margin-right: auto;
     font-size: 13pt;
@@ -19,12 +24,12 @@
   
   .container {
     padding-top: 30px;
-    // width: 100%;
-    // margin: 0 auto;
   }
+
   .dropzone {
     justify-content: center;
   }
+
   .info {
     display: flex;
     flex-direction: row;
