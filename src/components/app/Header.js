@@ -6,9 +6,7 @@ import { logout } from '../auth/actions';
 import { Link } from 'react-router-dom'; //Route ?
 import Error from './Error';
 import styles from './Header.css';
-import logo from '../../assets/images/logo-2.svg';
-// import mainImage from '../../assets/images/pets-footer_img.png';
-
+import logo from '../../assets/images/logo-3.svg';
 
 class Header extends Component {
 

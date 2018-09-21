@@ -30,7 +30,6 @@ export const getPets = () => get(PETS_URL);
 export const postPet = data => post(PETS_URL, data);
 export const deletePet = id => del(`${PETS_URL}/${id}`);
 export const putPet = pet => {
-  //id vs _id
   const { id, ...copy } = pet;
   return put(`${PETS_URL}/${id}`, copy);
 };

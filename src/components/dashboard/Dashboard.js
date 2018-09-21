@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSeeker } from '../pets/reducers';
-import { getPetsByOwner } from '../pets/reducersPets';
 import { loadPetsByOwner } from '../pets/actionsPets';
+import { getPetsByOwner } from '../pets/reducersPets';
 import Matches from './Matches';
 
 class Dashboard extends Component {

@@ -36,10 +36,6 @@ class PetTile extends Component {
         </section>
         
         <section>
-        {/* <section className="description">
-          <p>Description a loa;sdhgl;ajshdg ;lashdglha;s dg l;ajhsdgjhas;djg ajshdg ajshdg;l a;lsdgh asd ;alksdg lahsd;lgha;sdhg;ahsd;gh a;sd g</p>
-        </section> */}
-
           <PetDetailView
             key={pet._id} 
             pet={pet}    

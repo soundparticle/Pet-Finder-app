@@ -38,24 +38,33 @@ class PetDashboard extends Component {
     this.props.loadPets();
   }
 
+  handleFilter = () => {
+    const { filter } = this.state;
+    this.setState({ filter: !filter });
+  }
+
   render() { 
     const { filter } = this.state;
     const { addSeeker, seeker, pets } = this.props;
     
     return ( 
       <div className={styles.petDashboard}>
-        {/* {seeker &&  */}
-    
-  
-           {/* {filter && */}
-            {/* //   <aside className="filter">
-            //     <PetFilter onComplete={filterPets}/>
-            //   </aside> */}
-            // 
-        // }
-        <PetSeeker className="active" onComplete={addSeeker}/>
-        <ImageSlider className="active" pets={pets}/>
-        <PetFilter onComplete={filterPets}/>
+        {!seeker
+          ? <section>
+            <PetSeeker className="active" onComplete={addSeeker}/>
+          </section> 
+
+          : <Fragment>
+            <button onClick={this.handleFilter}>Filter search</button>
+            {filter &&
+              <section className="filter">
+                <PetFilter onComplete={filterPets}/>
+              </section>
+            }
+            <ImageSlider className="active" pets={pets}/>
+          </Fragment>
+               
+        }
 
       </div>
     );
