@@ -7,7 +7,9 @@
   font-family: 'Rubik', sans-serif;
   font-size: 3vw;
   letter-spacing: -.9px;
-  background-image: linear-gradient(to right, #ee7e6c, #e7717d, #ee7e6c); 
+  background-image: linear-gradient(to right, #c29a94, #cf98b2, rgb(235, 186, 252)); 
+  // background-image: linear-gradient(to right, #a7f5d0, #98c2cf, rgb(63, 165, 228)); 
+  // background-color: rgba(235, 131, 131, 0.6); 
   
   nav {
     display: flex;
@@ -17,6 +19,7 @@
     height: 10vh;
     margin-top: 1vh;
     padding-top: 1vh;
+    margin-right: 10vw;
   }
   
   a {
@@ -36,9 +39,8 @@
   
   .logo {
     width: 25vw;
-    margin-bottom: 1.8vh;
-    margin-right: 1vw;
-    align-items:  
+    margin-bottom: 7.8vh;
+    margin-right: 1vw;  
   }
 
   .logo-link:hover {
