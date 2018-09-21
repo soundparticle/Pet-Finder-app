@@ -9,14 +9,36 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 13pt;
-    // padding: 0;
     padding: 3vh 5vw;
     text-align: left;
-    // width: 100vw;
   }
 
   p {
     font-family: 'Rubik', sans-serif;
+  }
+  
+  .container {
+    padding-top: 30px;
+    // width: 100%;
+    // margin: 0 auto;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  }
+
+  img {
+    display: flex;
+    max-width: 20%;
+    max-height: 20%;
+  }
+
+  .aboutMe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 } 
     @media (min-width: 768px) {
@@ -28,6 +50,11 @@
           display: inline-flex;
           flex-direction: row;
         
+        }
+        img {
+          display: flex;
+          max-width: 60%;
+          max-height: 60%;
         }
       }
     }
