@@ -4,16 +4,6 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 
-// const USER_NAME = 'dsdmwoefe';
-// const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
-// const options = '';
-
-// export const getUrl = (url) => {
-//   return axios.get(`${FETCH_URL}/${encodeURIComponent(url)}`);
-// };
-
-
-
 class PostForm extends Component {
 
   state = {
@@ -339,6 +329,7 @@ class PostForm extends Component {
               : <p>Drop your files or click here to upload</p>
             }
           </Dropzone>
+          <button>Submit</button>
         </form>
       </div>
     );

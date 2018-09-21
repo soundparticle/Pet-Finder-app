@@ -13,16 +13,16 @@
 //     wantPets: []
 //   }
 
-  // static propTypes = {
-  //   wants: PropTypes.array,
-  //   load: PropTypes.func.isRequired,
-  //   loadPetsByOwner: PropTypes.func.isRequired,
-  //   pets: PropTypes.array
-  // }
+// static propTypes = {
+//   wants: PropTypes.array,
+//   load: PropTypes.func.isRequired,
+//   loadPetsByOwner: PropTypes.func.isRequired,
+//   pets: PropTypes.array
+// }
 
-  // componentDidMount() { 
-  //   this.setState({ wantPets: this.props.pets.filter(pet => this.props.wants.some(id => pet._id === id)) });
-  // }
+// componentDidMount() { 
+//   this.setState({ wantPets: this.props.pets.filter(pet => this.props.wants.some(id => pet._id === id)) });
+// }
 //   render() {
     
 //     const { wantPets } = this.state;
