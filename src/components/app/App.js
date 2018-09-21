@@ -14,7 +14,7 @@ import ListAPet from '../pets/ListAPet';
 import PetSeeker from '../forms/PetSeeker';
 import GetStarted from './GetStarted';
 import Dashboard from '../dashboard/Dashboard';
-import mainImage from '../../assets/images/pets-footer_img.png';
+import mainImage from '../../assets/images/pets-header-trimmed.png';
 
 class App extends PureComponent {
 
