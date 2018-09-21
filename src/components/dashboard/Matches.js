@@ -23,21 +23,22 @@ class Matches extends Component {
     
     return (
       <div>
-        <h3>Matches Component</h3>
-        <li>
-          <h3>{pet.name}</h3>
-        </li>
+        <h3>{pet.name}</h3>
 
-        {matches &&
-        <ul>
-          {matches.map(match => (
-            <MatchInfo 
-              key={match._id}
-              match={match}
-            />
-          ))}
-        </ul>
-        }
+        <section>
+          <h5>Matches</h5>
+          {matches &&
+          <ul>
+            {matches.map(match => (
+              <MatchInfo 
+                key={match._id}
+                match={match}
+              />
+            ))}
+          </ul>
+          }
+        </section>
+
 
       </div>
     );
