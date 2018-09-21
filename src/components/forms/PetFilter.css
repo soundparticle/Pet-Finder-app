@@ -27,12 +27,9 @@
     font-size: 1em;
     text-align: center;
     text-align-last: center;
-    /* webkit*/
   }
   
   option {
     text-align: left;
-    /* reset to left*/
   }
-  
 }

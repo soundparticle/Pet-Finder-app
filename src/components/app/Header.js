@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
-import { Link } from 'react-router-dom'; //Route ?
+import { Link } from 'react-router-dom'; 
 import Error from './Error';
 import styles from './Header.css';
 import logo from '../../assets/images/logo-3.svg';
@@ -48,8 +48,6 @@ class Header extends Component {
           </nav>
           <Error/>
         </header>
-        {/* <img className="main-image" src={mainImage}/> */}
-
       </div>
     );
   }

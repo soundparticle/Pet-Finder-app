@@ -1,4 +1,3 @@
-// export const WANTS_LOAD = 'WANTS_LOAD';
 export const WANT_ADD = 'WANT_ADD';
 export const WANT_REMOVE = 'WANT_REMOVE';
 

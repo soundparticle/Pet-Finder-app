@@ -28,10 +28,7 @@ class PetDetailView extends Component {
         <p className="App-intro">
           <button onClick={ () => this.handleClick() }>Details</button>
         </p>
-        {/* <ToggleDisplay show={this.state.show}>
-          I am rendered in a span (by default) and hidden with display:none when show is false.
-        </ToggleDisplay> */}
- 
+        
         <ToggleDisplay if={this.state.show} tag="section">
           <ul>
             <li>
@@ -94,8 +91,6 @@ class PetDetailView extends Component {
               </li>
             </div>
   
-          
-
           </ul>
         </ToggleDisplay>
       </div>

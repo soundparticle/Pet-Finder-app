@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-// import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import styles from './Home.css';
-// import yourImage from '../.././assets/images/white-canine.jpg';
-// import background from '../.././assets/images/white-fur-texture.jpeg';
 
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
@@ -36,7 +33,6 @@ class Home extends Component {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
       }).then(({ data }) => {
         const fileURL = data.secure_url; // You should store this URL for future references in your app
-        //console.log(fileURL);
         this.setState({ upload: fileURL });
       });
     });
@@ -52,47 +48,13 @@ class Home extends Component {
   }
   
   render() { 
-    // const { image } = this.state;
     return (
       <div className={styles.home}>
-        {/* <h1>Home/About Page</h1> */}
         <h2>Welcome to Home Swap</h2>
         <div className="container">
           <div className="summary">
             <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help! Follow the links above and you&apos;re on your way!</p>
           </div>
-          
-          {/* <div className={styles.container}>
-            <div>
-            <h4>About Us</h4>
-            
-            <div className={styles.info}>
-            <h5>Easton</h5>
-            <img src={yourImage}/>
-            <p className={styles.aboutMe}>Hey! My name is Easton. slsdfsdkljflsdjfsldfj</p>
-            </div>
-            
-            <div className={styles.info}>
-            <h5>Sarah</h5>
-            <img src={yourImage}/>
-            <p className={styles.aboutMe}>Hey! My name is Sarah. slsdfsdkljflsdjfsldfj</p>
-            
-            </div>
-            
-            <div className={styles.info}>
-            <h5>Robyn</h5>
-            <img src={yourImage}/>
-            <p className={styles.aboutMe}>Hey! My name is Robyn. slsdfsdkljflsdjfsldfj</p>
-            </div>
-            
-            <div className={styles.info}>
-            <h5>Antreo</h5>
-            <img src={yourImage}/>
-            <p className={styles.aboutMe}>Hey! My name is Antreo. slsdfsdkljflsdjfsldfj</p>
-            </div>
-            
-            </div>
-          </div> */}
         </div>  
       </div>
 
