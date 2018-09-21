@@ -4,7 +4,7 @@ import promiseMiddleware from './promise-middleware';
 import { error, loading } from '../components/app/reducers';
 import { user, checkedAuth } from '../components/auth/reducers';
 import { seeker } from '../components/pets/reducers';
-import { pets } from '../components/pets/reducersPets';
+import { pets, petsByOwner } from '../components/pets/reducersPets';
 import { favorites } from '../components/pets/reducersFavorites';
 import { wants } from '../components/pets/reducersWants';
 
@@ -16,7 +16,8 @@ const rootReducer = combineReducers({
   pets,
   checkedAuth,
   favorites,
-  wants
+  wants,
+  petsByOwner
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

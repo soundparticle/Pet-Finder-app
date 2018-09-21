@@ -34,12 +34,8 @@ class PetFilter extends Component {
 
     const keys = Object.keys(this.state);
     let filter = '?';
-
-    // for(let i = 0; i < keys.length; i++) {
-    //   this.state[keys[i]] !== '' ? filter += `&${keys[i]}=${this.state[keys[i]]}` : null;
-    // }
   
-    keys.filter(key => this.state[key] !== '' ? filter += `&${key}=${this.state[key]}` : null);
+    keys.forEach(key => this.state[key] !== '' ? filter += `&${key}=${this.state[key]}` : null);
     
     this.props.filterPets(filter);
     this.props.onComplete(filter);
