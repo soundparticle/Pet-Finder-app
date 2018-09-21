@@ -5,7 +5,7 @@ import { getUser } from '../auth/reducers';
 import { logout } from '../auth/actions';
 import { Link } from 'react-router-dom'; 
 import styles from './Footer.css';
-import logo from '../../assets/images/logo-2.svg';
+import logo from '../../assets/images/logo-3.svg';
 
 class Footer extends Component {
 
