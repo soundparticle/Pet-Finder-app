@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import PostForm from '../forms/PostForm';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPet } from './actionsPets';
-import PostPet from '../forms/PostPet';
-
 
 class ListAPet extends Component {
 
@@ -17,12 +16,12 @@ class ListAPet extends Component {
 
     return (
       <div>
-        <PostPet onComplete={addPet}/>
+        <PostForm onComplete={addPet}/>
       </div>
     );
   }
 }
- 
+
 export default connect(
   null,
   { addPet }

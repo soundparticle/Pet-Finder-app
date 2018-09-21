@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
-class FavoriteButton extends Component {
+class WantButton extends Component {
 
   static propTypes = {
     onComplete: PropTypes.func.isRequired,
@@ -11,17 +11,13 @@ class FavoriteButton extends Component {
 
   handleSubmit = () => {
     const { pet } = this.props;
-    console.log('PETID', pet._id);
     this.props.onComplete({ id: pet._id });
   }
   render() { 
-
     return (
-      <div>
-        <button onClick={this.handleSubmit}>Favorite</button>
-      </div>
+      <button onClick={this.handleSubmit}>Want</button>
     );
   }
 }
  
-export default FavoriteButton;
+export default WantButton;

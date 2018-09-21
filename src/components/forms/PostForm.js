@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import styles from './PostPet.css';
+import styles from './PostForm.css';
 import PropTypes from 'prop-types';
+import Dropzone from 'react-dropzone';
+import axios from 'axios';
+// const USER_NAME = 'dsdmwoefe';
+// const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
+// const options = 'w_300';
 
-class PostPet extends Component {
+// export const getUrl = (url, options = '') => {
+//   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
+// };
+
+class PostForm extends Component {
 
   state = {
     zip: '',
     reason: '',
     name: '',
     species: '',
-    catBreed: 'Unknown',
-    dogBreed: 'Unknown',
+    catBreed: 'unknown',
+    dogBreed: 'unknown',
     size: '',
     sex: '',
     age: '',
-    sterilized: 'Unknown',
-    children: '',
-    petFriendly: 'Unknown',
+    sterilized: '',
+    kidFriendly: '',
+    petFriendly: '',
     activityLevel: '',
     description: '',
     healthBehavior: '',
-    photo: ''
+    images: '',
+    upload: ''
   }
 
   static propTypes = {
@@ -29,51 +39,37 @@ class PostPet extends Component {
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
-    console.log(target.value);
-    
   }
 
   handleSubmit = event => {
-    const { 
-      zip, 
-      rehome,
-      name, 
-      species, 
-      catBreed, 
-      dogBreed,
-      size, 
-      sex, 
-      age, 
-      sterilized, 
-      kidFriendly, 
-      petFriendly, 
-      activityLevel, 
-      description, 
-      healthBehavior, 
-      photo 
-    } = this.state;
     event.preventDefault();
+    this.props.onComplete(this.state);
 
-    this.props.onComplete({
-      zip: zip,
-      rehome: rehome,
-      name: name,
-      species: species,
-      catBreed: catBreed,
-      dogBreed: dogBreed,
-      size: size,
-      sex: sex,
-      age: age,
-      sterilized: sterilized,
-      kidFriendly: kidFriendly,
-      petFriendly: petFriendly,
-      activityLevel: activityLevel,
-      description: description,
-      healthBehavior: healthBehavior,
-      photo: photo
-    });
   }
 
+  handleDrop = (files) => {
+    const uploaders = files.map(file => {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('tags', 'codeinfuse, medium, gist');
+      formData.append('upload_preset', 'poxg6yon'); 
+      formData.append('api_key', '1234567'); 
+      formData.append('timestamp', (Date.now() / 1000) | 0);
+      
+      return axios.post('https://api.cloudinary.com/v1_1/dsdmwoefe/image/upload', formData, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      }).then(({ data }) => {
+        const fileURL = data.secure_url; 
+        this.setState({ images: fileURL });
+      });
+    });
+
+    axios.all(uploaders)
+      .then(() => {
+        return console.log('success');                                                                                                          
+      });
+  }
+  
   render() { 
     const { 
       zip,
@@ -91,11 +87,11 @@ class PostPet extends Component {
       activityLevel, 
       description, 
       healthBehavior, 
-      photo 
+      images
     } = this.state;
 
     return (
-      <div className={styles.PostPet}>
+      <div className={styles.postPet}>
         <h2>Form to post a pet</h2>
         <p>In order to find the perfect home for your pet, please fill out all fields.</p>
         <form onSubmit={this.handleSubmit}>
@@ -103,6 +99,7 @@ class PostPet extends Component {
           <label>
             <h6>Reason for rehoming:</h6>
             <select name="reason" value={reason} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="none">None</option>
               <option value="allergy">Allergy</option>
               <option value="death">Death</option>
@@ -125,9 +122,9 @@ class PostPet extends Component {
           <label>
             <h6>Animal:</h6>
             <select name="species" value={species} onChange={this.handleChange}>
-              <option value="any">Any</option>
-              <option value="dog">Dog</option>
+              <option value="" disabled>Select an option</option>
               <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
             </select>
           </label>
 
@@ -139,8 +136,11 @@ class PostPet extends Component {
                 ?
                 <div>
                   <select name="catBreed" value={catBreed} onChange={this.handleChange}>
-                    <option value="other">Other</option>
+                    <option value="" disabled>Select an option</option>
+                    <option value="not-applicable">Not Applicable</option>
                     <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
+                    <option value="mixed-breed">Mixed-Breed</option>
                     <option value="domestic-shorthair">Domestic Shorthair</option>
                     <option value="domestic-longhair">Domestic Longhair</option>
                     <option value="abyssinian">Abyssinian</option>
@@ -192,8 +192,10 @@ class PostPet extends Component {
                 :
                 <div>
                   <select name="dogBreed" value={dogBreed} onChange={this.handleChange}>
-                    <option value="other">Other</option>
+                    <option value="" disabled>Select an option</option>
+                    <option value="not-applicable">Not Applicable</option>
                     <option value="unknown">Unknown</option>
+                    <option value="other">Other</option>
                     <option value="mixed-breed">Mixed-Breed</option>
                     <option value="beagle">Beagle</option> 
                     <option value="bernese-mountain-dog">Bernese Mountain Dog</option>
@@ -232,10 +234,10 @@ class PostPet extends Component {
             }
           </label>
           
-
           <label>
             <h6>Size:</h6>
             <select name="size" value={size} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="extra-small">X-Small</option>
               <option value="small">Small</option>
               <option value="medium">Medium</option>
@@ -247,6 +249,7 @@ class PostPet extends Component {
           <label>
             <h6>Sex:</h6>
             <select name="sex" value={sex} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
@@ -256,6 +259,7 @@ class PostPet extends Component {
           <label>
             <h6>Age:</h6> 
             <select name="age" value={age} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Don&#39;t know</option>
               <option value="baby">Baby</option>
               <option value="young">Young</option>
@@ -267,6 +271,7 @@ class PostPet extends Component {
           <label>
             <h6>Sterilized: </h6>
             <select name="sterilized" value={sterilized} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -275,10 +280,10 @@ class PostPet extends Component {
 
           <label>
 
-            <h6>Plays well with children:</h6>
-            <select name="kid-friendly" value={kidFriendly} onChange={this.handleChange}>
+            <h6>Plays well with kids:</h6>
+            <select name="kidFriendly" value={kidFriendly} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
-
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -286,16 +291,18 @@ class PostPet extends Component {
 
           <label>
             <h6>Plays well with other pets:</h6>
-            <select name="pet-friendly" value={petFriendly} onChange={this.handleChange}>
+            <select name="petFriendly" value={petFriendly} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
+              <option value="unknown">Unknown</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
-              <option value="unknown">Unknown</option>
             </select>
           </label>
 
           <label>
             <h6>Activity level required:</h6> 
             <select name="activityLevel" value={activityLevel} onChange={this.handleChange}>
+              <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
@@ -310,18 +317,30 @@ class PostPet extends Component {
 
           <label>
             <h6>Health/behavior: </h6>
-            <textarea name="health-behavior" value={healthBehavior} onChange={this.handleChange}></textarea>
+            <textarea name="healthBehavior" value={healthBehavior} onChange={this.handleChange}></textarea>
           </label>
 
           <label>
-            <h6>Upload Photo:</h6>
-            <input name="photo" value={photo} onChange={this.handleChange} />
+            <h6>Upload images:</h6>
+            <input name="images" value={images} onChange={this.handleChange} />
           </label>
           <button>rehome</button>
         </form>
+        <Dropzone 
+          onDrop={this.handleDrop} 
+          multiple 
+          accept="image/*" 
+          // style={styles.dropzone}
+        >
+          {images 
+            ? <img src={images}/>
+            : <p>Drop your files or click here to upload</p>
+          }
+        </Dropzone>
       </div>
     );
   }
 }
  
-export default PostPet;
+export default PostForm
+;
