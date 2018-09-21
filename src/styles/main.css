@@ -16,7 +16,16 @@
   }
 
   h3 {
-    padding-left: 35px;
+    padding-left: 4vh;
+  }
+
+  h6 {
+    padding-left: 1vh;
+  }
+
+  p {
+    padding-left: 4vh;
+    padding-right: 3vh; 
   }
   .main-image {
     max-width:100%;
@@ -27,14 +36,24 @@
   }
 
   input {
-    margin-left: 30px;
+    margin-left: 3vh;
   }
+
   select {
-  margin-left: 30px;
+  margin-left: 4vh;
   box-sizing: content-box;
   padding-left: 5px 0;
   }
+
   h5 {
     margin: 0;
+  }
+
+  button {
+    margin-left: 3vh;
+  }
+
+  textarea {
+    margin-left: 4vh;
   }
 }

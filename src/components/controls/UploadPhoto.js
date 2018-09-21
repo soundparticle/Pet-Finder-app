@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import PostForm from '../forms/PostFrom';
+import styles from './UploadPhoto.css';
+
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
 const options = 'w_300';
@@ -52,7 +54,7 @@ class UploadPhoto extends Component {
     // const { image } = this.state;
     return (
         
-      <div>
+      <div className={styles.uploadPhoto}>
         <PostForm />
         <Dropzone 
           onDrop={this.handleDrop} 
