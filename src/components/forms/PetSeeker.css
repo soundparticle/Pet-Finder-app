@@ -8,10 +8,16 @@
     border: 1px solid black;
     border-radius: 4px;
     margin-bottom: 1em;
+    text-align: center;
+    text-align-last: center;
   }
 
   select {
       border: 1px solid black;
       border-radius: 4px;
+  }
+
+  option {
+    text-align: left;
   }
 }

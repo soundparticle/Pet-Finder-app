@@ -22,7 +22,8 @@ class PetFilter extends Component {
   }
 
   static propTypes = {
-    onComplete: PropTypes.func,
+    onComplete: PropTypes.func.isRequired,
+    onToggle: PropTypes.func.isRequired,
     filterPets: PropTypes.func
   }
 
@@ -31,15 +32,16 @@ class PetFilter extends Component {
   };
 
   handleSubmit = event => {
+    const { filterPets, onComplete, onToggle } = this.props;
     event.preventDefault();
 
     const keys = Object.keys(this.state);
     let filter = '?';
-  
     keys.forEach(key => this.state[key] !== '' ? filter += `&${key}=${this.state[key]}` : null);
     
-    this.props.filterPets(filter);
-    this.props.onComplete(filter);
+    filterPets(filter);
+    onComplete(filter);
+    onToggle();
   };
 
   render() { 

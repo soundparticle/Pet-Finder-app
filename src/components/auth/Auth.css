@@ -1,6 +1,5 @@
 :local(.authForm) {
   .auth-container {
-    // width: 50vw;
     display: flex;
     flex-flow: column wrap;
     align-items: center;

@@ -37,18 +37,21 @@ class App extends PureComponent {
           <Header/>
           <main>
             <img className="main-image" src={mainImage}/>
-            { checkedAuth &&
-              <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/auth" component={Auth}/>
-                <PrivateRoute exact path="/dashboard" component={Dashboard}/>
-                <PrivateRoute exact path="/find" component={PetDashboard}/>
-                <PrivateRoute exact path="/post" component={ListAPet}/>
-                <PrivateRoute exact path="/seek" component={PetSeeker}/>
-                <PrivateRoute exact path="/get-started" component={GetStarted}/>
-                <Redirect to="/"/>
-              </Switch>
-            }
+            <div className="switch">
+              { checkedAuth &&
+                <Switch>
+                  <Route exact path="/" component={Home}/>
+                  <Route path="/auth" component={Auth}/>
+                  <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                  <PrivateRoute exact path="/find" component={PetDashboard}/>
+                  <PrivateRoute exact path="/post" component={ListAPet}/>
+                  <PrivateRoute exact path="/seek" component={PetSeeker}/>
+                  <PrivateRoute exact path="/get-started" component={GetStarted}/>
+                  <Redirect to="/"/>
+                </Switch>
+              }
+
+            </div>
           </main>
 
           <Footer/>

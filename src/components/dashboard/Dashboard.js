@@ -23,6 +23,7 @@ class Dashboard extends Component {
 
     return ( 
       <div>
+        <h2>Pets listed</h2>
         {petsByOwner &&
           <ul>
             {petsByOwner.map(pet => (

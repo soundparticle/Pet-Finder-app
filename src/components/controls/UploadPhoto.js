@@ -35,7 +35,6 @@ class UploadPhoto extends Component {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
       }).then(({ data }) => {
         const fileURL = data.secure_url; // You should store this URL for future references in your app
-        //console.log(fileURL);
         this.setState({ upload: fileURL });
       });
     });
@@ -46,12 +45,9 @@ class UploadPhoto extends Component {
         return getUrl(this.state.upload, options);                                                                                                          
       })
       .then(photo => this.setState({ image: photo }));
-
-    // ... perform after upload is successful operation
   }
 
   render() { 
-    // const { image } = this.state;
     return (
         
       <div className={styles.uploadPhoto}>
@@ -60,7 +56,6 @@ class UploadPhoto extends Component {
           onDrop={this.handleDrop} 
           multiple 
           accept="image/*" 
-          // style={styles.dropzone}
         >
           <p>Drop your files or click here to upload</p>
         </Dropzone>
