@@ -15,7 +15,9 @@ class WantButton extends Component {
   }
   render() { 
     return (
-      <button onClick={this.handleSubmit}>Want</button>
+      <i onClick={this.handleSubmit} 
+        className="far fa-bell">
+      </i>
     );
   }
 }

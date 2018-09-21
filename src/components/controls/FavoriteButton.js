@@ -17,7 +17,10 @@ class FavoriteButton extends Component {
 
     return (
       <div>
-        <button onClick={this.handleSubmit}>Favorite</button>
+        <i 
+          className="far fa-star" 
+          onClick={this.handleSubmit}>
+        </i>
       </div>
     );
   }

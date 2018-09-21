@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSeeker } from './reducers';
@@ -9,8 +9,21 @@ import PetFilter from '../forms/PetFilter';
 import ImageSlider from '../imageSlider/Slider';
 import { getPets } from './reducersPets';
 import { filterPets } from '../pets/actionsPets';
+import styles from './PetDashboard.css';
+
+// const USER_NAME = 'dsdmwoefe';
+// const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
+// const options = 'w_300';
+
+// export const getUrl = (url, options = '') => {
+//   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
+// };
 
 class PetDashboard extends Component {
+
+  state = {
+    filter: false
+  }
   
   static propTypes = {
     seeker: PropTypes.object,
@@ -24,27 +37,25 @@ class PetDashboard extends Component {
     this.props.load();
     this.props.loadPets();
   }
-  
 
   render() { 
-
+    const { filter } = this.state;
     const { addSeeker, seeker, pets } = this.props;
     
     return ( 
-      <div>
-        {!seeker &&
-          <section>
-            <PetSeeker onComplete={addSeeker}/>
-          </section>
-        }
-        <h3>{pets.name}</h3>
-        <section>
-          <ImageSlider pets={pets}/>
-        </section>
+      <div className={styles.petDashboard}>
+        {!seeker 
+          ? <PetSeeker className="active" onComplete={addSeeker}/>
+          : <Fragment>
+            <ImageSlider className="active" pets={pets}/>
 
-        <aside>
-          <PetFilter onComplete={filterPets}/>
-        </aside>
+            {filter &&
+              <aside className="filter">
+                <PetFilter onComplete={filterPets}/>
+              </aside>
+            }
+          </Fragment>
+        }
       </div>
     );
   }
