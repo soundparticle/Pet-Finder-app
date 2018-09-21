@@ -58,7 +58,7 @@ class Slider extends Component {
           else return null;
         })}
 
-        <section>
+        <section className="buttons">
           {slideCount !== 0 
             ? <BackArrow previousImage={this.previousImage}/> 
             : ''

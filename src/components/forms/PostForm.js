@@ -3,13 +3,16 @@ import styles from './PostForm.css';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
+
 // const USER_NAME = 'dsdmwoefe';
 // const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
-// const options = 'w_300';
+// const options = '';
 
-// export const getUrl = (url, options = '') => {
-//   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
+// export const getUrl = (url) => {
+//   return axios.get(`${FETCH_URL}/${encodeURIComponent(url)}`);
 // };
+
+
 
 class PostForm extends Component {
 
@@ -34,7 +37,8 @@ class PostForm extends Component {
   }
 
   static propTypes = {
-    onComplete: PropTypes.func.isRequired
+    onComplete: PropTypes.func.isRequired,
+    getUrl: PropTypes.func
   }
 
   handleChange = ({ target }) => {
@@ -58,10 +62,10 @@ class PostForm extends Component {
       
       return axios.post('https://api.cloudinary.com/v1_1/dsdmwoefe/image/upload', formData, {
         headers: { 'X-Requested-With': 'XMLHttpRequest' },
-      }).then(({ data }) => {
-        const fileURL = data.secure_url; 
-        this.setState({ images: fileURL });
-      });
+      })
+        .then(({ data }) => {
+          this.setState({ images: data.secure_url });
+        });
     });
 
     axios.all(uploaders)
@@ -322,28 +326,23 @@ class PostForm extends Component {
 
           <label>
             <h6>Upload images:</h6>
-            <input name="images" value={images} onChange={this.handleChange} />
           </label>
-          <button>rehome</button>
+        
+          <Dropzone  
+            multiple 
+            accept="image/*" 
+            style={styles.dropzone}
+            onDrop={this.handleDrop}
+          >
+            {images 
+              ? <img className="upload"src={images}/>
+              : <p>Drop your files or click here to upload</p>
+            }
+          </Dropzone>
         </form>
-        <section>
- 
-        </section>
-        <Dropzone 
-          onDrop={this.handleDrop} 
-          multiple 
-          accept="image/*" 
-          // style={styles.dropzone}
-        >
-          {images 
-            ? <img src={images}/>
-            : <p>Drop your files or click here to upload</p>
-          }
-        </Dropzone>
       </div>
     );
   }
 }
  
-export default PostForm
-;
+export default PostForm;
