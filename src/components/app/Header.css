@@ -23,6 +23,15 @@
     margin-right: 10vw;
     margin-bottom: 20vh;
   }
+
+  .getStarted {
+    margin-top: 5vh;
+    .logo2 {
+      width: 25vw;
+      margin-top: 5vh;
+      // margin-top: 20vh;
+    }
+  }
   
   a {
     z-index: 100;
@@ -44,6 +53,7 @@
     width: 25vw;
     margin-bottom: 7.8vh;
     margin-right: 1vw;  
+    
   }
 
   .logo-link:hover {
@@ -63,9 +73,10 @@
         display: flex;
         position: fixed;
         flex-flow: column nowrap;
-        height: 20vh;
+        height: 25vh;
         width: 100vw;
         font-family: 'Rubik', sans-serif;
         font-size: 3vw;
+        margin-bottom: 6vh;
       }
     }
