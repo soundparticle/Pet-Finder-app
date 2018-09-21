@@ -22,7 +22,7 @@ class Footer extends Component {
     const { user } = this.props;
 
     return (
-      <header className={styles.footer}>
+      <footer className={styles.footer}>
         <nav>
           <Link className="logo-link" to="/"><img className="logo" src={logo}/></Link>
           { user
@@ -40,7 +40,7 @@ class Footer extends Component {
             </Fragment> 
           }
         </nav>
-      </header>
+      </footer>
     );
   }
 }
