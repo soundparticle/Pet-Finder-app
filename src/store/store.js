@@ -7,6 +7,7 @@ import { seeker } from '../components/pets/reducers';
 import { pets, petsByOwner } from '../components/pets/reducersPets';
 import { favorites } from '../components/pets/reducersFavorites';
 import { wants } from '../components/pets/reducersWants';
+import { matches } from '../components/dashboard/reducers';
 
 const rootReducer = combineReducers({
   error,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   checkedAuth,
   favorites,
   wants,
-  petsByOwner
+  petsByOwner,
+  matches
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

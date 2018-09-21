@@ -9,7 +9,6 @@ describe.only('Wants reducers', () => {
 
   it('initializes to an empty array', () => {
     const state = wants(undefined, {});
-    // console.log('***', state);
     expect(state).toEqual([]);
   });  
 
