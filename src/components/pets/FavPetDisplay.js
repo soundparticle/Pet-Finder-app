@@ -13,7 +13,7 @@ class FavPetDisplay extends PureComponent {
       <Fragment>
         <h3>{fav.name}</h3>
         <p>Sex: {fav.sex}</p>
-        <p>age: {fav.age}</p>
+        <p>Age: {fav.age}</p>
       </Fragment>
     );
   }
