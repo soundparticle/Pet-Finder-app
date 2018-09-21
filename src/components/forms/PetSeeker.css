@@ -10,7 +10,6 @@
     margin-bottom: 1em;
     text-align: center;
     text-align-last: center;
-    /* webkit*/
   }
 
   select {
@@ -20,6 +19,5 @@
 
   option {
     text-align: left;
-    /* reset to left*/
   }
 }

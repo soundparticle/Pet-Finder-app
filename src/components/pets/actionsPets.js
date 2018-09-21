@@ -5,10 +5,8 @@ import {
   PET_UPDATE, 
   PET_REMOVE,
   PET_FILTER
-  // MATCH_ADD 
 } from './reducersPets';
 
-// need both PETS_LOAD and PETSBYOWNER_LOAD ??
 import { 
   deletePet, 
   getPetsByOwner, 
@@ -16,7 +14,6 @@ import {
   postPet, 
   putPet,
   getPetFilter, 
-  // putMatch
 } from '../../services/api';
 
 export const loadPets = () => ({
@@ -48,8 +45,3 @@ export const updatePet = pet => ({
   type: PET_UPDATE,
   payload: putPet(pet)
 });
-
-// export const addMatch = id => ({
-//   type: MATCH_ADD,
-//   payload: putMatch(id)
-// });

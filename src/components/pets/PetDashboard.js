@@ -57,10 +57,8 @@ class PetDashboard extends Component {
               </section>
             }
             <ImageSlider className="active" pets={pets}/>
-          </Fragment>
-               
+          </Fragment>    
         }
-
       </div>
     );
   }
@@ -72,5 +70,4 @@ export default connect(
     pets: getPets(state)
   }),
   { load, addSeeker, loadPets }
-
 )(PetDashboard);

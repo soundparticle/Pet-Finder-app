@@ -59,8 +59,6 @@ class PetFilter extends Component {
       activityLevel,  
     } = this.state;
 
-    // const { onToggle } = this.props;
-
     return (
       <div>
         <h2>Narrow your search</h2>
