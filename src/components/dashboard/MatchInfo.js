@@ -11,8 +11,8 @@ class MatchInfo extends Component {
     const { match } = this.props;
     return (
       <li>
-        <p>{match.name}</p>
-        <p>{match.email}</p>
+        <p>Name: {match.name}</p>
+        <p>Email: {match.email}</p>
       </li>
     );
   }
