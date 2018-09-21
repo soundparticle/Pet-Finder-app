@@ -57,17 +57,17 @@ class Home extends Component {
       <div className={styles.home}>
         {/* <h1>Home/About Page</h1> */}
         <h2>Welcome to Home Swap</h2>
-    <div className="dropzone">
-      <Dropzone 
-        onDrop={this.handleDrop} 
-        multiple 
-        accept="image/*" 
-        // style={styles.dropzone}
-      >
-        <p>Drop your files or click here to upload</p>
-      </Dropzone>
+        <div className="dropzone">
+          <Dropzone 
+            onDrop={this.handleDrop} 
+            multiple 
+            accept="image/*" 
+            // style={styles.dropzone}
+          >
+            <p>Drop your files or click here to upload</p>
+          </Dropzone>
   
-    </div>
+        </div>
         <div className="container">
           <div className="summary">
             <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help!</p>
