@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import styles from './Home.css';
 // import yourImage from '../.././assets/images/white-canine.jpg';
-// import cat from '../.././assets/images/kitty&toy.png';
+// import background from '../.././assets/images/white-fur-texture.jpeg';
 
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
@@ -94,19 +94,7 @@ class Home extends Component {
             
             </div>
           </div> */}
-        </div>
-        <div className="dropzone">
-          <Dropzone 
-            onDrop={this.handleDrop} 
-            multiple 
-            accept="image/*" 
-            // style={styles.dropzone}
-          >
-            <p>Drop your files or click here to upload</p>
-          </Dropzone>
-  
-        </div>
-        
+        </div>  
       </div>
 
     );
