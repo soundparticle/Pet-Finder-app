@@ -20,7 +20,7 @@ class WantButton extends Component {
   render() { 
     return (
       <i onClick={this.handleSubmit} 
-        className="far fa-bell">
+        className="fas fa-bell">
       </i>
     );
   }

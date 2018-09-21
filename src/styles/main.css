@@ -16,9 +16,8 @@
     max-height:100%;
     display: block;
     height: auto;
-    top: 9vh;
-    // margin-top: -38px;
-    // margin: auto;
+    top: 12vh;
+    z-index: 100;
   }
   .switch {
     margin-top: 25vh;
@@ -98,6 +97,16 @@ html, body {
 }
 main {
   min-height: 68vh;
+}
+
+.fa-bell {
+  color: gold;
+  text-shadow: 
+     1px  1px     rgb(211, 194, 0), 
+    -1px  1px     rgb(211, 194, 0), 
+     1px -1px     rgb(211, 194, 0), 
+    -1px -1px     rgb(211, 194, 0),
+     1px  1px 5px rgb(211, 194, 0);
 }
 @media (min-width: 768px) {
   .main-image {
