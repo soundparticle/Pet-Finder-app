@@ -3,6 +3,7 @@ import styles from './PostForm.css';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class PostForm extends Component {
 
@@ -28,7 +29,9 @@ class PostForm extends Component {
 
   static propTypes = {
     onComplete: PropTypes.func.isRequired,
-    getUrl: PropTypes.func
+    getUrl: PropTypes.func,
+    history: PropTypes.object
+
   }
 
   handleChange = ({ target }) => {
@@ -37,8 +40,8 @@ class PostForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onComplete(this.state);
-
+    this.props.onComplete(this.state)
+      .then(() => this.props.history.push('/dashboard'));
   }
 
   handleDrop = (files) => {
@@ -336,4 +339,4 @@ class PostForm extends Component {
   }
 }
  
-export default PostForm;
+export default withRouter(PostForm);
