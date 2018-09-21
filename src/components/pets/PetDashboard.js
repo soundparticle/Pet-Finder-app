@@ -44,18 +44,19 @@ class PetDashboard extends Component {
     
     return ( 
       <div className={styles.petDashboard}>
-        {!seeker 
-          ? <PetSeeker className="active" onComplete={addSeeker}/>
-          : <Fragment>
-            <ImageSlider className="active" pets={pets}/>
+        {/* {seeker &&  */}
+    
+  
+           {/* {filter && */}
+            {/* //   <aside className="filter">
+            //     <PetFilter onComplete={filterPets}/>
+            //   </aside> */}
+            // 
+        // }
+        <PetSeeker className="active" onComplete={addSeeker}/>
+        <ImageSlider className="active" pets={pets}/>
+        <PetFilter onComplete={filterPets}/>
 
-            {filter &&
-              <aside className="filter">
-                <PetFilter onComplete={filterPets}/>
-              </aside>
-            }
-          </Fragment>
-        }
       </div>
     );
   }
