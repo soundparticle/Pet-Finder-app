@@ -14,14 +14,15 @@ class PetDetailView extends Component {
      
       <div className={styles.petDetail} >
         <ul>
+
           <li>
             <h1>{pet.name} the {pet.species}</h1>
           </li>
 
           <div className="properties">
+
             <li>
-             
-              <span className="category">Breed: </span>
+              <span className="category">Breed:  </span>
               <span className="value">   
                 {
                   pet.species === 'cat'
@@ -33,35 +34,32 @@ class PetDetailView extends Component {
             </li>
 
             <li>
-         
-              <span className="category">Size: </span>
+              <span className="category">Size:  </span>
               <span className="value">{pet.size}</span>
             </li>
 
             <li>
-         
-              <span className="category">Sex: </span>
+              <span className="category">Sex:  </span>
               <span className="value">{pet.sex}</span> 
             </li>
 
             <li>
-              <span className="category">Age: </span> 
+              <span className="category">Age:  </span> 
               <span className="value">{pet.age}</span>
             </li>
       
             <li>
-        
-              <span className="category">Required Activity Level: </span>
+              <span className="category">Required Activity Level:  </span>
               <span className="value">{pet.activityLevel}</span>
             </li>
 
             <li>
-              <span className="category">Good With Children: </span> 
+              <span className="category">Good With Children:  </span> 
               <span className="value">{pet.kidFriendly}</span>
             </li>
 
             <li>
-              <span className="category">Good With Other Pets: </span>
+              <span className="category">Good With Other Pets:  </span>
               <span className="value">{pet.petFriendly}</span>
             </li>
 
@@ -70,6 +68,7 @@ class PetDetailView extends Component {
               <br />
               <span className="value">{pet.description}</span>
             </li>
+
             <li>
               <span className="category">Notes on Health and Behavior:</span>
               <br />
