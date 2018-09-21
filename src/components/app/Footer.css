@@ -21,8 +21,12 @@
     justify-content: space-around;
     align-items: center;
     height: 5vh;
+    font-size: 3em;
+    list-style: none;
+    text-decoration: none;
   }
 }
+
 
 @media (min-width: 768px) {
   :local(.footer) {

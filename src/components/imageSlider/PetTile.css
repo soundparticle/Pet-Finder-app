@@ -16,8 +16,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 0px;
+    padding: 0px;
   }
 
+  h3 {
+    margin: 0px;
+    padding: 0px;
+  }
   .description {
     text-align: center;
   }
