@@ -101,7 +101,7 @@ class PostForm extends Component {
         <form onSubmit={this.handleSubmit}>
           
           <label>
-            <h6>Reason for rehoming:</h6>
+            <h4>Reason for rehoming:</h4>
             <select name="reason" value={reason} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="none">None</option>
@@ -114,17 +114,17 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Name:</h6>
+            <h4>Name:</h4>
             <input type="text" name="name" placeholder="Name of pet" size="12" value={name} onChange={this.handleChange} />
           </label>
 
           <label>
-            <h6>Location (zip code):</h6>
+            <h4>Location (zip code):</h4>
             <input type="text" name="zip" placeholder="zip code" pattern="^\d{5}(?:[-\s]\d{4})?$" value={zip} size="7" minLength="5" maxLength="5" onChange={this.handleChange} />
           </label>
 
           <label>
-            <h6>Animal:</h6>
+            <h4>Animal:</h4>
             <select name="species" value={species} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="cat">Cat</option>
@@ -134,7 +134,7 @@ class PostForm extends Component {
 
           <label>
 
-            <h6>Breed:</h6>
+            <h4>Breed:</h4>
             {
               species === 'cat'
                 ?
@@ -239,7 +239,7 @@ class PostForm extends Component {
           </label>
           
           <label>
-            <h6>Size:</h6>
+            <h4>Size:</h4>
             <select name="size" value={size} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="extra-small">X-Small</option>
@@ -251,7 +251,7 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Sex:</h6>
+            <h4>Sex:</h4>
             <select name="sex" value={sex} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -261,7 +261,7 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Age:</h6> 
+            <h4>Age:</h4> 
             <select name="age" value={age} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Don&#39;t know</option>
@@ -273,7 +273,7 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Sterilized: </h6>
+            <h4>Sterilized: </h4>
             <select name="sterilized" value={sterilized} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -284,7 +284,7 @@ class PostForm extends Component {
 
           <label>
 
-            <h6>Plays well with kids:</h6>
+            <h4>Plays well with kids:</h4>
             <select name="kidFriendly" value={kidFriendly} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -294,7 +294,7 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Plays well with other pets:</h6>
+            <h4>Plays well with other pets:</h4>
             <select name="petFriendly" value={petFriendly} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -304,7 +304,7 @@ class PostForm extends Component {
           </label>
 
           <label>
-            <h6>Activity level required:</h6> 
+            <h4>Activity level required:</h4> 
             <select name="activityLevel" value={activityLevel} onChange={this.handleChange}>
               <option value="" disabled>Select an option</option>
               <option value="unknown">Unknown</option>
@@ -315,17 +315,17 @@ class PostForm extends Component {
           </label>
           
           <label>
-            <h6>Description: </h6>
+            <h4>Description: </h4>
             <textarea name="description" value={description} onChange={this.handleChange}></textarea>
           </label>
 
           <label>
-            <h6>Health/behavior: </h6>
+            <h4>Health/behavior: </h4>
             <textarea name="healthBehavior" value={healthBehavior} onChange={this.handleChange}></textarea>
           </label>
 
           <label>
-            <h6>Upload images:</h6>
+            <h4>Upload images:</h4>
           </label>
         
           <Dropzone  

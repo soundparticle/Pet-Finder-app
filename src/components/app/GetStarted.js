@@ -54,7 +54,7 @@ class GetStarted extends Component {
         </section>
 
         <section>
-          <p>Looking for a home for your pet? Post you pet info here!</p>
+          <p>Needing a new home for your pet? Post you pet info here! We hope you&apos;ll find a great fit. </p>
           <button onClick={this.onOpenModel2}>Post a pet</button>
           <Modal classNames={styles} open={open2} onClose={this.onCloseModel2} center={false} animationDuration={100} showCloseIcon={false}>
             <PostForm onComplete={addPet}/>
