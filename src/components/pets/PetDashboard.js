@@ -11,14 +11,6 @@ import { getPets } from './reducersPets';
 import { filterPets } from '../pets/actionsPets';
 import styles from './PetDashboard.css';
 
-// const USER_NAME = 'dsdmwoefe';
-// const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
-// const options = 'w_300';
-
-// export const getUrl = (url, options = '') => {
-//   return `${FETCH_URL}/${options}${encodeURIComponent(url)}`;
-// };
-
 class PetDashboard extends Component {
 
   state = {
@@ -58,14 +50,15 @@ class PetDashboard extends Component {
             <button onClick={this.handleFilter}>Filter search</button>
             {filter &&
               <section className="filter">
-                <PetFilter onComplete={filterPets}/>
+                <PetFilter 
+                  onComplete={filterPets}
+                  onToggle={this.handleFilter}
+                />
               </section>
             }
             <ImageSlider className="active" pets={pets}/>
-          </Fragment>
-               
+          </Fragment>    
         }
-
       </div>
     );
   }
@@ -77,5 +70,4 @@ export default connect(
     pets: getPets(state)
   }),
   { load, addSeeker, loadPets }
-
 )(PetDashboard);

@@ -4,9 +4,7 @@
   flex-flow: row wrap;
   justify-content: center;
   font-family: 'Rubik', sans-serif;
-  font-size: 1em;
-  // height: 100vh;
-  
+  font-size: 1em;  
 
   h4 {
     margin: .2vh;
@@ -21,10 +19,12 @@
     border-radius: 4px;
     margin-bottom: 1.2vh;
   }
+
   p {
     font-size: 1em;
     font-weight: 900;
   }
+
   select {
     border: 1px solid black;
     margin-top: .5vh;

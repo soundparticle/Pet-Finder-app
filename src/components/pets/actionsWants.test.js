@@ -1,6 +1,6 @@
-import { addWant, /*removeWant*/ } from './actionsWants'; //put
-import { WANT_ADD, /*WANT_REMOVE*/ } from './reducersWants'; //WANT_PUT
-import { postWant, /*deleteWant*/ } from '../../services/api'; //putWant
+import { addWant } from './actionsWants'; 
+import { WANT_ADD } from './reducersWants';
+import { postWant } from '../../services/api';
 
 jest.mock('../../services/api.js', () => ({
   getWants: jest.fn(),

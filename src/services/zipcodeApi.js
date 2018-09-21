@@ -8,4 +8,3 @@ const get = url => fetch(url)
 export function getDistance(zip, dist) {
   return get(`${BASE_URL}/${API_KEY}/radius.csv/${zip}/${dist}/mile?minimal`);
 }
-

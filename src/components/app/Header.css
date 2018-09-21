@@ -9,8 +9,6 @@
   font-size: 3vw;
   letter-spacing: -.9px;
   background-image: linear-gradient(to right, #c29a94, #cf98b2, rgb(235, 186, 252)); 
-  // background-image: linear-gradient(to right, #a7f5d0, #98c2cf, rgb(63, 165, 228)); 
-  // background-color: rgba(235, 131, 131, 0.6); 
   
   nav {
     display: flex;
@@ -26,10 +24,10 @@
 
   .getStarted {
     margin-top: 5vh;
+    
     .logo2 {
       width: 25vw;
       margin-top: 5vh;
-      // margin-top: 20vh;
     }
   }
   
@@ -42,7 +40,6 @@
   }
 
   a:hover {
-    //background-color: #afd275;
     background-image: linear-gradient(to right, #afd275, #c7d8ac, #afd275); 
     text-decoration: none;
     color: black;
@@ -78,5 +75,13 @@
         font-family: 'Rubik', sans-serif;
         font-size: 3vw;
         margin-bottom: 6vh;
+      }
+
+      .logo {
+        width: 25vw;
+        margin-top: 5vh;
+        margin-bottom: 7.8vh;
+        margin-right: 1vw;  
+        
       }
     }

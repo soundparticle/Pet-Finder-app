@@ -24,20 +24,20 @@ class Matches extends Component {
     
     return (
       <div className={styles.matches}>
-       
         <h3 className="header">Pet: {pet.name}</h3>
-
-        {matches &&
-        <ul>
-          {matches.map(match => (
-            <MatchInfo 
-              key={match._id}
-              match={match}
-            />
-          ))}
-        </ul>
-        }
-
+        <section>
+          <h5>Matches</h5>
+          {matches &&
+          <ul>
+            {matches.map(match => (
+              <MatchInfo 
+                key={match._id}
+                match={match}
+              />
+            ))}
+          </ul>
+          }
+        </section>
       </div>
     );
   }

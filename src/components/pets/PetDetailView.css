@@ -7,16 +7,21 @@
   
   button {
     border-radius: 4px;
+    margin: 0;
+    
   }
+
   h1 {
     font-size: 1.5em;
     padding: 0;
     margin: 0;
   }
+
   li {
     list-style: none;
     margin: 8px;
   }
+
   .properties {
     list-style: none;
     display: block;
@@ -40,7 +45,4 @@
     color: steelblue;
     font-weight: 800;
   }
-
- 
-
 }

@@ -17,7 +17,6 @@ export function user(state = null, { type, payload }) {
   }
 }
 
-//SEEKER_AUTH something sort of like this???
 export function seeker(state = null, { type, payload }) {
   switch(type) {
     case SEEKER_AUTH:
