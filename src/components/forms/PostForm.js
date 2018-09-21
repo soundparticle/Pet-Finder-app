@@ -340,13 +340,9 @@ class PostForm extends Component {
             }
           </Dropzone>
         </form>
-        <img src={images}/>
-
-
       </div>
     );
   }
 }
  
-export default PostForm
-;
+export default PostForm;

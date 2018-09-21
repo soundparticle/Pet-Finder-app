@@ -3,8 +3,9 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  // height: 100vh;
   h6 {
-    margin: 2vh;
+    margin: 3vh;
   }
 
   select {

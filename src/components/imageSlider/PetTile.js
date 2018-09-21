@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FavoriteButton from '../controls/FavoriteButton';
 import WantButton from '../controls/WantButton';
 import styles from './PetTile.css';
+import PetDetailView from '../pets/PetDetailView';
 
 class PetTile extends Component {
 
@@ -33,10 +34,18 @@ class PetTile extends Component {
             pet={pet}
           />
         </section>
-
+        
+        <section>
         {/* <section className="description">
           <p>Description a loa;sdhgl;ajshdg ;lashdglha;s dg l;ajhsdgjhas;djg ajshdg ajshdg;l a;lsdgh asd ;alksdg lahsd;lgha;sdhg;ahsd;gh a;sd g</p>
         </section> */}
+
+          <PetDetailView
+            key={pet._id} 
+            pet={pet}    
+          />
+        </section>
+        
       </div>
     );
   }

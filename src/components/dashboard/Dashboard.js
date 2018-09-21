@@ -26,7 +26,7 @@ class Dashboard extends Component {
       <div>
         <h3>Dashboard</h3>
         {seeker
-          ?
+          ?  
           <section>
             <Favorites />
             <Wants />
@@ -51,5 +51,4 @@ export default connect(
     pets: getPets(state)
   }),
   { load, loadPets }
-
 )(Dashboard);
