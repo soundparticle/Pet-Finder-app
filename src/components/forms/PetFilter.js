@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { filterPets } from '../pets/actionsPets';
 import PropTypes from 'prop-types';
+import styles from './PetFilter.css';
+
 
 class PetFilter extends Component {
 
@@ -59,7 +61,7 @@ class PetFilter extends Component {
     return (
       <div>
         <h2>Narrow your search</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className={styles.petFilter}>
           
           <label>
             <h3>Location (zip code):</h3>
