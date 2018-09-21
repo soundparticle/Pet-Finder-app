@@ -5,6 +5,7 @@ import { getSeeker } from '../pets/reducers';
 import { loadPetsByOwner } from '../pets/actionsPets';
 import { getPetsByOwner } from '../pets/reducersPets';
 import Matches from './Matches';
+import styles from './Dashboard.css';
 
 class Dashboard extends Component {
 
@@ -22,8 +23,8 @@ class Dashboard extends Component {
     const { petsByOwner } = this.props; 
 
     return ( 
-      <div>
-        <h2>Pets listed</h2>
+      <div className={styles.dashboard}>
+        <h3 className="header">Pets listed</h3>
         {petsByOwner &&
           <ul>
             {petsByOwner.map(pet => (
