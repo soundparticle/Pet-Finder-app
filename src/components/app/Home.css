@@ -5,11 +5,17 @@
   font-family: 'Rubik', sans-serif;
  
   img {
-    width: 60%;
     align-self: center;
+    position: absolute;
+    bottom: 10px;
+    
+    
   }
   
  
+  h2 {
+    padding-top: 5vh;
+  }
   .summary {
     margin-left: auto;
     margin-right: auto;
@@ -20,10 +26,11 @@
 
   p {
     font-family: 'Rubik', sans-serif;
+
   }
   
   .container {
-    padding-top: 30px;
+    padding-top: 0;
   }
 
   .dropzone {

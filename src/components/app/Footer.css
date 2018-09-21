@@ -7,7 +7,9 @@
   font-family: 'Rubik', sans-serif;
   font-size: 1vw;
   background-image: linear-gradient(to right, #e0e7ed, #c2cad0, #e0e7ed); 
-
+  position:fixed;
+  bottom:0;
+  
   .logo {
     width: 10vw;
     margin-bottom: .2vh;
