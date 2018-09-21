@@ -19,8 +19,9 @@
     align-items: center;
     height: 10vh;
     margin-top: 1vh;
-    padding-top: 1vh;
+    padding-top: 2vh;
     margin-right: 10vw;
+    margin-bottom: 20vh;
   }
   
   a {
@@ -57,12 +58,12 @@
   }
 
 }
-
     @media (min-width: 768px) {
       :local(.header) {
         display: flex;
+        position: fixed;
         flex-flow: column nowrap;
-        height: 30vh;
+        height: 20vh;
         width: 100vw;
         font-family: 'Rubik', sans-serif;
         font-size: 3vw;

@@ -14,12 +14,11 @@
   
   .main-image {
     position: fixed;
-    
     max-width:100%;
     max-height:100%;
     display: block;
     height: auto;
-    top: 10vh;
+    top: 9vh;
     // margin-top: -38px;
     // margin: auto;
   }
@@ -94,11 +93,15 @@ html, body {
 }
 @media (min-width: 768px) {
   .main-image {
+    position: fixed;
+    
     max-width:100%;
     max-height:100%;
-    display: flex;
-    align-content: center;
+    display: block;
     height: auto;
-    margin-top: -80px;
+    top: 9vh;
+  }
+  .switch {
+    margin-top: 25vh;
   }
 }
