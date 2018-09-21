@@ -1,46 +1,54 @@
 .app-container {
   box-sizing: border-box;
   background-image: url("https://c1.staticflickr.com/5/4531/24113357397_3b16204c40_b.jpg");
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-repeat: no-repeat;
   background-size: cover;
   // background-size: 100% 100%;
-
+  
   
   // background-color: rgb(220, 248, 175);
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
   margin-bottom: 0px;
+  
+  .main-image {
+    position: fixed;
+    
+    max-width:100%;
+    max-height:100%;
+    display: block;
+    height: auto;
+    top: 10vh;
+    // margin-top: -38px;
+    // margin: auto;
+  }
+  .switch {
+    margin-top: 25vh;
+  }
   
   div {
     // background-color: rgb(220, 248, 175);
     padding-bottom: 20px;
-
+    
   }
   h2 {
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
   }
-
+  
   h3 {
     padding-left: 4vh;
   }
-
+  
   h6 {
     padding-left: 1vh;
   }
-
+  
   p {
     padding-left: 4vh;
     padding-right: 3vh; 
-  }
-  .main-image {
-    max-width:100%;
-    max-height:100%;
-    display: block;
-    height: auto;
-    margin-top: -38px;
-    // margin: auto;
   }
   
   input {
@@ -76,7 +84,13 @@
   
   body {
     font-family: 'Rubik', sans-serif;
+
   }
+
+}
+html, body {
+  margin: 0;
+  padding: 0;
 }
 @media (min-width: 768px) {
   .main-image {

@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'; //Route ?
 import Error from './Error';
 import styles from './Header.css';
 import logo from '../../assets/images/logo-2.svg';
+// import mainImage from '../../assets/images/pets-footer_img.png';
+
 
 class Header extends Component {
 
@@ -23,27 +25,31 @@ class Header extends Component {
     const { user } = this.props;
 
     return (
-      <header className={styles.header}>
-        { user && <span>Welcome, {user.name}</span> }
-        <nav>
-          <Link className="logo-link" to="/"><img className="logo" src={logo}/></Link>
-          { user
-            ? <Fragment>
-              <Link to="/find">Find a Pet</Link>
-              <Link to="/post">Post Pet</Link>
-              <Link to="/dashboard">Dashboard</Link>
-              <Link to="/" onClick={this.handleLogout}>Logout</Link>
+      <div>
+        <header className={styles.header}>
+          { user && <span>Welcome, {user.name}</span> }
+          <nav>
+            <Link className="logo-link" to="/"><img className="logo" src={logo}/></Link>
+            { user
+              ? <Fragment>
+                <Link to="/find">Find a Pet</Link>
+                <Link to="/post">Post Pet</Link>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/" onClick={this.handleLogout}>Logout</Link>
+  
+              </Fragment>
+              :
+              <Fragment>
+                <Link to="/get-started">Get Started</Link>
+                <Link to="/auth">Signin</Link>
+              </Fragment> 
+            }
+          </nav>
+          <Error/>
+        </header>
+        {/* <img className="main-image" src={mainImage}/> */}
 
-            </Fragment>
-            :
-            <Fragment>
-              <Link to="/get-started">Get Started</Link>
-              <Link to="/auth">Signin</Link>
-            </Fragment> 
-          }
-        </nav>
-        <Error/>
-      </header>
+      </div>
     );
   }
 }
