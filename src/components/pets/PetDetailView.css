@@ -1,0 +1,40 @@
+:local(.petDetail) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+  max-width: 90%;
+  
+  h1 {
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    margin: 8px;
+  }
+  .properties {
+    list-style: none;
+    display: block;
+    align-items: space-between;
+    padding: 0px 20px 0px 20px;
+    margin: 0px;
+    font-size: 1.1em;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  .category {
+    
+    color: #3a2f28;
+    font-weight: 800;
+  }
+
+  .value {
+    color: rgb(207, 90, 35);
+  }
+
+}

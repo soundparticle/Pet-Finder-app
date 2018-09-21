@@ -326,6 +326,9 @@ class PostForm extends Component {
           </label>
           <button>rehome</button>
         </form>
+        <section>
+ 
+        </section>
         <Dropzone 
           onDrop={this.handleDrop} 
           multiple 
