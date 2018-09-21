@@ -7,7 +7,7 @@ import { loadPets } from '../pets/actionsPets';
 import ImageSlider from '../imageSlider/Slider';
 import { getPets } from '../pets/reducersPets';
 import Favorites from './Favorites';
-import Wants from './Wants';
+// import Wants from './Wants';
 
 class Dashboard extends Component {
 
@@ -29,7 +29,7 @@ class Dashboard extends Component {
           ?  
           <section>
             <Favorites />
-            <Wants />
+            {/* <Wants /> */}
             <h3>{pets.name}</h3>
             <section>
               <ImageSlider pets={pets}/>
