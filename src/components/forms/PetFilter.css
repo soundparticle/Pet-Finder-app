@@ -25,7 +25,14 @@
     margin-top: 2px;
     border: 1px solid black;
     font-size: 1em;
+    text-align: center;
+    text-align-last: center;
+    /* webkit*/
   }
   
+  option {
+    text-align: left;
+    /* reset to left*/
+  }
   
 }

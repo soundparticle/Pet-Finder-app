@@ -60,7 +60,14 @@
     box-sizing: content-box;
     padding-left: 5px 0;
     width: 200px;
-    
+    text-align: center;
+    text-align-last: center;
+    /* webkit*/
+  }
+  
+  option {
+    text-align: left;
+    /* reset to left*/
   }
   
   img {
