@@ -8,6 +8,7 @@ import ImageSlider from '../imageSlider/Slider';
 import { getPets } from '../pets/reducersPets';
 import Favorites from './Favorites';
 import Wants from './Wants';
+import Matches from './Matches';
 
 class Dashboard extends Component {
 
@@ -26,11 +27,10 @@ class Dashboard extends Component {
       <div>
         <h3>Dashboard</h3>
         {seeker
-          ?
+          ?  
           <section>
             <Favorites />
             <Wants />
-            <h3>{pets.name}</h3>
             <section>
               <ImageSlider pets={pets}/>
             </section>
@@ -38,6 +38,7 @@ class Dashboard extends Component {
           :
           <section>
             <h2>Owner dashboard</h2>
+            <Matches/>
           </section>
         }
       </div>
@@ -51,5 +52,4 @@ export default connect(
     pets: getPets(state)
   }),
   { load, loadPets }
-
 )(Dashboard);

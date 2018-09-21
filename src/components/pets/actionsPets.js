@@ -22,9 +22,9 @@ export const loadPets = () => ({
   payload: getPets()
 });
 
-export const loadPet = id => ({
+export const loadPet = () => ({
   type: PET_LOAD,
-  payload: getPet(id)
+  payload: getPet()
 });
 
 export const filterPets = options => ({
