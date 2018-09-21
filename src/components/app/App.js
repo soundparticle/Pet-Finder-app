@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCheckedAuth } from '../auth/reducers';
 import { tryLoadUser } from '../auth/actions';
 import Header from './Header';
+import Footer from './Footer';
 import PrivateRoute from './PrivateRoute';
 import Home from './Home';
 import Auth from '../auth/Auth';
@@ -50,9 +51,7 @@ class App extends PureComponent {
             }
           </main>
 
-          <footer>
-            <h5>Footer lives here</h5>
-          </footer>
+          <Footer/>
         </div>
       </Router>
     );

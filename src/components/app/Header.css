@@ -23,7 +23,8 @@
   }
 
   a:hover {
-    background-color: #afd275;
+    // background-color: #afd275;
+    background-image: linear-gradient(to right, #afd275, #c7d8ac, #afd275); 
     text-decoration: none;
     color: black;
     border-radius: 4px;
@@ -36,7 +37,7 @@
   }
 
   .logo-link:hover {
-    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
   }
   
   span {

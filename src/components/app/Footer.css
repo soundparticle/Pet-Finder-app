@@ -1,0 +1,36 @@
+:local(.footer) {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 5vh;
+  width: 100vw;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1vw;
+  background-image: linear-gradient(to right, #e0e7ed, #c2cad0, #e0e7ed); 
+
+  .logo {
+    width: 10vw;
+    margin-bottom: .2vh;
+    margin-left: .3vw;
+    justify-self: flex-start;
+  }
+
+  nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh;
+  }
+}
+
+@media (min-width: 768px) {
+  :local(.footer) {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 10vh;
+    width: 100vw;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1vw;
+  }
+}
