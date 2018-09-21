@@ -11,14 +11,16 @@ class FavoriteButton extends Component {
 
   handleSubmit = () => {
     const { pet } = this.props;
-    console.log('PETID', pet._id);
     this.props.onComplete({ id: pet._id });
   }
   render() { 
 
     return (
       <div>
-        <button onClick={this.handleSubmit}>Favorite</button>
+        <i 
+          className="far fa-star" 
+          onClick={this.handleSubmit}>
+        </i>
       </div>
     );
   }

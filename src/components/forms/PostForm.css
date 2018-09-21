@@ -24,6 +24,10 @@
     align-items: flex-start;
     width: 50vw;
   }
+
+  .upload {
+    width: 200px;
+  }
 }
 
 @media (min-width: 768px) {

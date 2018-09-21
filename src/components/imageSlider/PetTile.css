@@ -1,0 +1,24 @@
+:local(.petTile) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 2em;
+  }
+
+  hgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+}
