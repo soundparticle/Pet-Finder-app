@@ -6,7 +6,7 @@
   max-width: 90%;
   
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0;
     margin: 0;
   }
@@ -20,7 +20,7 @@
     align-items: space-between;
     padding: 0px 20px 0px 20px;
     margin: 0px;
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   p {
@@ -30,11 +30,14 @@
   .category {
     
     color: #3a2f28;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   .value {
-    color: rgb(207, 90, 35);
+    color: steelblue;
+    font-weight: 800;
   }
+
+ 
 
 }

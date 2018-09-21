@@ -3,13 +3,34 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1em;
   // height: 100vh;
-  h6 {
-    margin: 3vh;
+  
+
+  h4 {
+    margin: .2vh;
+    font-weight: 900;
   }
 
+  textarea {
+    width: 200px;
+    height: 150px;
+    font-size: 1em;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 1.2vh;
+  }
+  p {
+    font-size: 1em;
+    font-weight: 900;
+  }
   select {
     border: 1px solid black;
+    margin-top: .5vh;
+    margin-bottom: .6vh;
+    border: 1px solid black;
+    font-size: 1em;
   }
 
   label {
@@ -17,6 +38,7 @@
     flex-flow: column wrap;
     align-content: center;
     justify-content: center;
+    font-size: 1em;
   }
 
   form {
@@ -28,6 +50,14 @@
 
   .upload {
     width: 200px;
+  }
+
+  input {
+    font-size: 1em;
+    padding: 4px 8px 4px 8px;
+    border-radius: 4px;
+    width: 5em;
+    margin-bottom: .6vh;
   }
 }
 
