@@ -18,7 +18,7 @@ export const loadSeeker = () => get(SEEKER_URL);
 export const putFavorite = favorite => put(`${SEEKER_URL}/favorites`, favorite); 
 export const getPetFilter = options => get(`${PETS_URL}/filter/${options}`);
 export const getPets = () => get(PETS_URL);
-export const getPet = id => get(`${PETS_URL}/${id}`);
+export const getPet = () => get(`${PETS_URL}/single`);
 export const postPet = data => post(PETS_URL, data);
 export const deletePet = id => del(`${PETS_URL}/${id}`);
 export const putPet = pet => {

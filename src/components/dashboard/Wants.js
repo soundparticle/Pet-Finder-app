@@ -25,13 +25,12 @@ class Wants extends Component {
   }
   render() {
     
-    const { wants } = this.props;
     const { wantPets } = this.state;
 
     return (
       <section>
         <h3>Wants Component</h3>
-        {wants && <ul>
+        {wantPets && <ul>
           {wantPets.map(want => {
             return <WantPetItem key={want._id} fav={want}/>;
           })}
@@ -44,8 +43,8 @@ class Wants extends Component {
  
 export default connect(
   state => ({
-    wants: getSeeker(state).wants,
+    wants: getSeeker(state).interested,
     pets: getPets(state)
   }),
-  { load, loadPet }
+  null
 )(Wants);

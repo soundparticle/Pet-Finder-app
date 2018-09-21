@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { load } from '../pets/actions';
-import { loadPet } from '../pets/actionsPets';
+// import { load } from '../pets/actions';
+// import { loadPet } from '../pets/actionsPets';
 import { getSeeker } from '../pets/reducers';
 import { getPets } from '../pets/reducersPets';
 import FavPetItem from '../pets/FavPetItem';
@@ -15,8 +15,8 @@ class Favorites extends Component {
 
   static propTypes = {
     favorites: PropTypes.array,
-    load: PropTypes.func.isRequired,
-    loadPet: PropTypes.func.isRequired,
+    // load: PropTypes.func.isRequired,
+    // loadPet: PropTypes.func.isRequired,
     pets: PropTypes.array
   }
 
@@ -26,12 +26,12 @@ class Favorites extends Component {
   
   render() { 
 
-    const { favorites } = this.props;
     const { favPets } = this.state;
+
     return ( 
       <section>
         <h3>Favorites Component</h3>
-        {favorites && <ul>
+        {favPets && <ul>
           {favPets.map(favorite => {
             return <FavPetItem key={favorite._id} fav={favorite}/>;
           })}
@@ -47,5 +47,5 @@ export default connect(
     favorites: getSeeker(state).favorites,
     pets: getPets(state)
   }),
-  { load, loadPet }
+  null
 )(Favorites);
