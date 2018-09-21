@@ -75,7 +75,7 @@ class Slider extends Component {
 }
 
 const BackArrow = (props) => (
-  <div  
+  <div
     onClick={props.previousImage} 
     style={{ fontSize: '1em', marginRight: '12px' }}
   >

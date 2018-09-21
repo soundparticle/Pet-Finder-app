@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getMatches } from './reducers';
 import { loadMatches } from './actions';
 import MatchInfo from './MatchInfo';
+import styles from './Matches.css';
 
 class Matches extends Component {
 
@@ -22,11 +23,9 @@ class Matches extends Component {
     const { pet, matches } = this.props;
     
     return (
-      <div>
-        <h3>Matches Component</h3>
-        <li>
-          <h3>{pet.name}</h3>
-        </li>
+      <div className={styles.matches}>
+       
+        <h3 className="header">Pet: {pet.name}</h3>
 
         {matches &&
         <ul>
