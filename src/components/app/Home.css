@@ -22,6 +22,9 @@
     // width: 100%;
     // margin: 0 auto;
   }
+  .dropzone {
+    justify-content: center;
+  }
   .info {
     display: flex;
     flex-direction: row;

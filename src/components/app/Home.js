@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import styles from './Home.css';
 // import yourImage from '../.././assets/images/white-canine.jpg';
+// import cat from '../.././assets/images/kitty&toy.png';
 
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
@@ -61,6 +62,7 @@ class Home extends Component {
           <div className="summary">
             <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help! Follow the links above and you&apos;re on your way!</p>
           </div>
+          
           {/* <div className={styles.container}>
             <div>
             <h4>About Us</h4>
@@ -93,7 +95,6 @@ class Home extends Component {
             </div>
           </div> */}
         </div>
-        
         <div className="dropzone">
           <Dropzone 
             onDrop={this.handleDrop} 
@@ -105,6 +106,7 @@ class Home extends Component {
           </Dropzone>
   
         </div>
+        
       </div>
 
     );
