@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { filterPets } from '../pets/actionsPets';
 import PropTypes from 'prop-types';
 import styles from './PetFilter.css';
+// import cat from '../.././assets/images/kitty&toy.png';
+
 
 
 class PetFilter extends Component {

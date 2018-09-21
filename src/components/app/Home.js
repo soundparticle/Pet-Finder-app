@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import styles from './Home.css';
+// import yourImage from '../.././assets/images/white-canine.jpg';
+// import cat from '../.././assets/images/kitty&toy.png';
+
 const USER_NAME = 'dsdmwoefe';
 const FETCH_URL = `http://res.cloudinary.com/${USER_NAME}/image/fetch`;
 const options = 'w_300';
@@ -48,7 +51,7 @@ class Home extends Component {
 
     // ... perform after upload is successful operation
   }
-
+  
   render() { 
     // const { image } = this.state;
     return (
@@ -57,19 +60,53 @@ class Home extends Component {
         <h2>Welcome to Home Swap</h2>
         <div className="container">
           <div className="summary">
-            <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help!</p>
+            <p>Looking for the perfect pet for your home or need to find a home for a pet? We can help! Follow the links above and you&apos;re on your way!</p>
           </div>
-          <div className="dropzone">
-            <Dropzone 
-              onDrop={this.handleDrop} 
-              multiple 
-              accept="image/*" 
-              // style={styles.dropzone}
-            >
-              <p>Drop your files or click here to upload</p>
-            </Dropzone>
-          </div>
+          
+          {/* <div className={styles.container}>
+            <div>
+            <h4>About Us</h4>
+            
+            <div className={styles.info}>
+            <h5>Easton</h5>
+            <img src={yourImage}/>
+            <p className={styles.aboutMe}>Hey! My name is Easton. slsdfsdkljflsdjfsldfj</p>
+            </div>
+            
+            <div className={styles.info}>
+            <h5>Sarah</h5>
+            <img src={yourImage}/>
+            <p className={styles.aboutMe}>Hey! My name is Sarah. slsdfsdkljflsdjfsldfj</p>
+            
+            </div>
+            
+            <div className={styles.info}>
+            <h5>Robyn</h5>
+            <img src={yourImage}/>
+            <p className={styles.aboutMe}>Hey! My name is Robyn. slsdfsdkljflsdjfsldfj</p>
+            </div>
+            
+            <div className={styles.info}>
+            <h5>Antreo</h5>
+            <img src={yourImage}/>
+            <p className={styles.aboutMe}>Hey! My name is Antreo. slsdfsdkljflsdjfsldfj</p>
+            </div>
+            
+            </div>
+          </div> */}
         </div>
+        <div className="dropzone">
+          <Dropzone 
+            onDrop={this.handleDrop} 
+            multiple 
+            accept="image/*" 
+            // style={styles.dropzone}
+          >
+            <p>Drop your files or click here to upload</p>
+          </Dropzone>
+  
+        </div>
+        
       </div>
 
     );
