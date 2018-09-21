@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FavoriteButton from '../controls/FavoriteButton';
 import WantButton from '../controls/WantButton';
-
+import PetDetailView from '../pets/PetDetailView';
 class PetTile extends Component {
 
   static propTypes = {
@@ -31,9 +31,17 @@ class PetTile extends Component {
             pet={pet}
           />
         </section>
-
+        
         <section>
-          <p>Description a loa;sdhgl;ajshdg ;lashdglha;s dg l;ajhsdgjhas;djg ajshdg ajshdg;l a;lsdgh asd ;alksdg lahsd;lgha;sdhg;ahsd;gh a;sd g</p>
+
+          <PetDetailView
+            key={pet._id} 
+            pet={pet}    
+          />
+        </section>
+        
+        <section>
+          <p>Description a loa;sdhgl;ajshdg</p>
         </section>
       </div>
     );

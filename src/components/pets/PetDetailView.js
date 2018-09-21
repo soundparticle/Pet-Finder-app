@@ -1,81 +1,86 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-class DetailView extends Component {
-
+import styles from './PetDetailView.css';
+class PetDetailView extends Component {
+  
   static propTypes = {
     pet: PropTypes.object
   };
-
+  
   render() {
     const { pet } = this.props;
 
     return (
-
-      <div key={pet._id}>
+     
+      <div className={styles.petDetail} >
         <ul>
           <li>
-            <h1>{pet.name}</h1>
+            <h1>{pet.name} the {pet.species}</h1>
           </li>
 
-          <li>
-            <h3>species:</h3>
-            <p>{pet.species}</p>
-          </li>
+          <div className="properties">
+            <li>
+             
+              <span className="category">Breed: </span>
+              <span className="value">   
+                {
+                  pet.species === 'cat'
+                    ?
+                    pet.catBreed
+                    :
+                    pet.dogBreed
+                } </span> 
+            </li>
 
-          <li>
-            <h3>Breed:</h3>
-            {
-              pet.species === 'cat'
-                ?
-                pet.catBreed
-                :
-                pet.dogBreed
-            }
-          </li>
+            <li>
+         
+              <span className="category">Size: </span>
+              <span className="value">{pet.size}</span>
+            </li>
 
-          <li>
-            <h3>Size:</h3>
-            <p>{pet.size}</p>
-          </li>
+            <li>
+         
+              <span className="category">Sex: </span>
+              <span className="value">{pet.sex}</span> 
+            </li>
 
-          <li>
-            <h3>Sex:</h3>
-            <p>{pet.sex}</p>
-          </li>
-
-          <li>
-            <h3>Age:</h3>
-            <p>{pet.age}</p>
-          </li>
+            <li>
+              <span className="category">Age: </span> 
+              <span className="value">{pet.age}</span>
+            </li>
       
-          <li>
-            <h3>Required Activity Level:</h3>
-            <p>{pet.activityLevel}</p>
-          </li>
+            <li>
+        
+              <span className="category">Required Activity Level: </span>
+              <span className="value">{pet.activityLevel}</span>
+            </li>
 
-          <li>
-            <h3>Good With Children:</h3>
-            <p>{pet.KidFriendly}</p>
-          </li>
+            <li>
+              <span className="category">Good With Children: </span> 
+              <span className="value">{pet.kidFriendly}</span>
+            </li>
 
-          <li>
-            <h3>Good With Other Pets:</h3>
-            <p>{pet.petFriendly}</p>
-          </li>
+            <li>
+              <span className="category">Good With Other Pets: </span>
+              <span className="value">{pet.petFriendly}</span>
+            </li>
 
-          <li>
-            <h3>Animal Description:</h3>
-            <p>{pet.description}</p>
-          </li>
-          <li>
-            <h3>Notes on Health and Behavior:</h3>
-            <p>{pet.healthBehavior}</p>
-          </li>
+            <li>
+              <span className="category">Animal Description:</span>
+              <br />
+              <span className="value">{pet.description}</span>
+            </li>
+            <li>
+              <span className="category">Notes on Health and Behavior:</span>
+              <br />
+              <span className="value">{pet.healthBehavior}</span>
+            </li>
+
+          </div>
         </ul>
       </div>
     );
   }
 }
 
-export default DetailView;
+export default PetDetailView;
