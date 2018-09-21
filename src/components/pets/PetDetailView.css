@@ -30,11 +30,16 @@
   .category {
     
     color: #3a2f28;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   .value {
-    color: rgb(207, 90, 35);
+    color: steelblue;
+    font-weight: 800;
+  }
+
+  button {
+    background-color: pink;
   }
 
 }
